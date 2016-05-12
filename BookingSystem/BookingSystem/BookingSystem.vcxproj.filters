@@ -19,6 +19,33 @@
     <Filter Include="Header Files\File">
       <UniqueIdentifier>{2e2e54e7-3008-4bde-8122-96c642c706c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Logic layer">
+      <UniqueIdentifier>{da674f8f-08e7-421a-8c59-9b004f5295c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Ui layer">
+      <UniqueIdentifier>{8fdf1492-9ee8-404a-9d8a-0bae3cda7bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic layer\Reservations">
+      <UniqueIdentifier>{642c7266-54d6-45d9-b41e-719cbd5c636c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic layer\Services">
+      <UniqueIdentifier>{97183c39-269d-49ec-93ac-9000b55a4360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic layer\Account">
+      <UniqueIdentifier>{13b21a44-95cc-4885-906d-86e512018a30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic layer">
+      <UniqueIdentifier>{e66fce26-253b-4b94-9c37-cf215e3c2e8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic layer\Account">
+      <UniqueIdentifier>{ab17c230-2782-4aab-8b56-d1de8f3316c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic layer\Services">
+      <UniqueIdentifier>{39c47ed1-7350-4bb0-86a8-f67172aa400d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic layer\Reservations">
+      <UniqueIdentifier>{88709d2b-5fc8-4dd4-9a4d-cb90212239f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -33,6 +60,15 @@
     <ClCompile Include="StringFunction.cpp">
       <Filter>Source Files\File</Filter>
     </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReservationCalendar.cpp">
+      <Filter>Source Files\Logic layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Service.cpp">
+      <Filter>Source Files\Logic layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringFunction.h">
@@ -43,6 +79,42 @@
     </ClInclude>
     <ClInclude Include="TextWriter.h">
       <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="ISystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IReservationCalendar.h">
+      <Filter>Header Files\Logic layer\Reservations</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservationCalendar.h">
+      <Filter>Header Files\Logic layer\Reservations</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation.h">
+      <Filter>Header Files\Logic layer\Reservations</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Header Files\Logic layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files\Logic layer</Filter>
+    </ClInclude>
+    <ClInclude Include="ILibrary.h">
+      <Filter>Header Files\Logic layer\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter.h">
+      <Filter>Header Files\Logic layer\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Review.h">
+      <Filter>Header Files\Logic layer\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="IAccount.h">
+      <Filter>Header Files\Logic layer\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
+      <Filter>Header Files\Logic layer\Services</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
