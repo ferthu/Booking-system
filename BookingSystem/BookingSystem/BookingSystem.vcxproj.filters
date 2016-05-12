@@ -13,10 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\File">
+      <UniqueIdentifier>{b4585169-6c8c-4961-9781-b8ad4a81ab51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\File">
+      <UniqueIdentifier>{2e2e54e7-3008-4bde-8122-96c642c706c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextWriter.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="StringFunction.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StringFunction.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="TextWriter.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

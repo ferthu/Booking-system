@@ -147,6 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="StringFunction.cpp" />
+    <ClCompile Include="TextReader.cpp" />
+    <ClCompile Include="TextWriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StringFunction.h" />
+    <ClInclude Include="TextReader.h" />
+    <ClInclude Include="TextWriter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
