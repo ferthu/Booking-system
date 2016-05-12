@@ -33,6 +33,12 @@
     <ClCompile Include="StringFunction.cpp">
       <Filter>Source Files\File</Filter>
     </ClCompile>
+    <ClCompile Include="UIPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringFunction.h">
@@ -43,6 +49,15 @@
     </ClInclude>
     <ClInclude Include="TextWriter.h">
       <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="UIPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestUIPage.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

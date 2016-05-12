@@ -1,5 +1,13 @@
+using namespace std;
 
-//Kevin
-//Judar
-// Timmie
+#include "UIPage.h"
+#include "UIState.h"
 
+UIPage* UIState::currentPage;
+
+int main()
+{
+	// UIState::initialize();
+
+
+}
