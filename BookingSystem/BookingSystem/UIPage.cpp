@@ -1,43 +1,50 @@
+/* Created by: Timmie
+*/
+
 #include <iostream>
 #include "UIState.h"
 #include "UIPage.h"
 
 using namespace std;
 
-void UIPage::clearInputBuffer()
-{
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
-}
+namespace ui {
 
-int UIPage::getNumberInput(int min, int max)
-{
-	int number;
-	cin >> number;
-	clearInputBuffer();
-
-	while (number < min || number > max)
+	void UIPage::clearInputBuffer()
 	{
-		cout << "Enter a number between " << min << " and " << max << ": ";
-		cin >> number;
-		clearInputBuffer();
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
 	}
 
-	return number;
-}
-string UIPage::getWordInput()
-{
-	string str;
+	int UIPage::getNumberInput(int min, int max)
+	{
+		int number;
+		cin >> number;
+		clearInputBuffer();
 
-	cin >> str;
-	clearInputBuffer();
+		while (number < min || number > max)
+		{
+			cout << "Enter a number between " << min << " and " << max << ": ";
+			cin >> number;
+			clearInputBuffer();
+		}
 
-	return str;
-}
+		return number;
+	}
+	string UIPage::getWordInput()
+	{
+		string str;
 
-UIPage::UIPage()
-{}
+		cin >> str;
+		clearInputBuffer();
 
-UIPage::~UIPage()
-{
+		return str;
+	}
+
+	UIPage::UIPage()
+	{}
+
+	UIPage::~UIPage()
+	{
+	}
+
 }

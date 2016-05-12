@@ -1,16 +1,22 @@
+/* Created by: Timmie
+*/
 #ifndef UISTATE_H
 #define UISTATE_H
 
 #include "UIPage.h"
 
-class UIState
-{
-private:
-	static UIPage* currentPage;
+namespace ui {
 
-public:
-	static void swichPage(UIPage* newPage);
-	static void initialize(UIPage* firstPage);
-};
+	class UIState
+	{
+	private:
+		UIPage* currentPage;
+
+	public:
+		void swichPage(UIPage* newPage);
+		void initialize(UIPage* firstPage);
+	};
+
+}
 
 #endif

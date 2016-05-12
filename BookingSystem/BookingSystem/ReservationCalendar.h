@@ -1,6 +1,6 @@
-#pragma once
-/* Mattias Fredriksson 2016
+/* Created by: Mattias Fredriksson
 */
+#pragma once
 
 #include "IReservationCalendar.h"
 

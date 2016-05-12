@@ -153,6 +153,8 @@
     <ClCompile Include="System.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TextWriter.cpp" />
+    <ClCompile Include="UIPage.cpp" />
+    <ClCompile Include="UIState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
@@ -170,6 +172,8 @@
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWriter.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="UIPage.h" />
+    <ClInclude Include="UIState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

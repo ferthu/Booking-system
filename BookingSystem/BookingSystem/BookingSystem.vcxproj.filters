@@ -46,6 +46,9 @@
     <Filter Include="Source Files\Logic layer\Reservations">
       <UniqueIdentifier>{88709d2b-5fc8-4dd4-9a4d-cb90212239f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Ui layer">
+      <UniqueIdentifier>{a6218e8d-0992-4aae-a512-c635d68735d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,6 +71,12 @@
     </ClCompile>
     <ClCompile Include="Service.cpp">
       <Filter>Source Files\Logic layer</Filter>
+    </ClCompile>
+    <ClCompile Include="UIPage.cpp">
+      <Filter>Source Files\Ui layer</Filter>
+    </ClCompile>
+    <ClCompile Include="UIState.cpp">
+      <Filter>Source Files\Ui layer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="Service.h">
       <Filter>Header Files\Logic layer\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="UIPage.h">
+      <Filter>Header Files\Ui layer</Filter>
+    </ClInclude>
+    <ClInclude Include="UIState.h">
+      <Filter>Header Files\Ui layer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
+/* Created by: Mattias Fredriksson
+*/
 #include "ReservationCalendar.h"
 
-/* Mattias
-*/
 
 namespace lic {
 

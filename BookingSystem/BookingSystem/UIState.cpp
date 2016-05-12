@@ -1,15 +1,21 @@
+/* Created by: Timmie
+*/
 #include "UIState.h"
 
-void UIState::swichPage(UIPage* newPage)
-{
-	delete currentPage;
+namespace ui {
 
-	currentPage = newPage;
-	currentPage->runPage();
-}
+	void UIState::swichPage(UIPage* newPage)
+	{
+		delete currentPage;
 
-void UIState::initialize(UIPage* firstPage)
-{
-	currentPage = firstPage;
-	currentPage->runPage();
+		currentPage = newPage;
+		currentPage->runPage();
+	}
+
+	void UIState::initialize(UIPage* firstPage)
+	{
+		currentPage = firstPage;
+		currentPage->runPage();
+	}
+
 }
