@@ -6,11 +6,24 @@
 class UIState
 {
 private:
-	static UIPage* currentPage;
+	static UIState* instance;
+
+	UIPage* currentPage;
+	UIPage* nextPage;
+	bool quit;
+	UIState();
 
 public:
-	static void swichPage(UIPage* newPage);
-	static void initialize(UIPage* firstPage);
+	static void initialize();
+	static void cleanup();
+	static UIState* getInstance();
+
+	void quitUI();
+	void setNextPage(UIPage* next);
+
+	void runUI(UIPage* firstPage);
 };
+
+
 
 #endif

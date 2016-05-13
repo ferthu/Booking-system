@@ -39,5 +39,4 @@ UIPage::UIPage()
 {}
 
 UIPage::~UIPage()
-{
-}
+{}

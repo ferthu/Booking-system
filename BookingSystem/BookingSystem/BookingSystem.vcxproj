@@ -155,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringFunction.h" />
-    <ClInclude Include="TestUIPage.h" />
+    <ClInclude Include="TestPages.h" />
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWriter.h" />
     <ClInclude Include="UIPage.h" />

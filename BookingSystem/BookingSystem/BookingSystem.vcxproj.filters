@@ -56,7 +56,7 @@
     <ClInclude Include="UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestUIPage.h">
+    <ClInclude Include="TestPages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
