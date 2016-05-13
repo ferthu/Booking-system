@@ -12,7 +12,7 @@ int main() {
 
 	//There is progress. . . Buffering . . .
 
-	/* System variables on the stack.
+	/* System variables is created on the stack.
 	*/
 	lic::System sys;
 	ui::UIState ui;
