@@ -1,137 +1,112 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\File">
-      <UniqueIdentifier>{b4585169-6c8c-4961-9781-b8ad4a81ab51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\File">
-      <UniqueIdentifier>{2e2e54e7-3008-4bde-8122-96c642c706c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic layer">
-      <UniqueIdentifier>{da674f8f-08e7-421a-8c59-9b004f5295c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Ui layer">
-      <UniqueIdentifier>{8fdf1492-9ee8-404a-9d8a-0bae3cda7bbf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic layer\Reservations">
-      <UniqueIdentifier>{642c7266-54d6-45d9-b41e-719cbd5c636c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic layer\Services">
-      <UniqueIdentifier>{97183c39-269d-49ec-93ac-9000b55a4360}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic layer\Account">
-      <UniqueIdentifier>{13b21a44-95cc-4885-906d-86e512018a30}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic layer">
-      <UniqueIdentifier>{e66fce26-253b-4b94-9c37-cf215e3c2e8e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic layer\Account">
-      <UniqueIdentifier>{ab17c230-2782-4aab-8b56-d1de8f3316c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic layer\Services">
-      <UniqueIdentifier>{39c47ed1-7350-4bb0-86a8-f67172aa400d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic layer\Reservations">
-      <UniqueIdentifier>{88709d2b-5fc8-4dd4-9a4d-cb90212239f9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Ui layer">
-      <UniqueIdentifier>{a6218e8d-0992-4aae-a512-c635d68735d0}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextWriter.cpp">
-      <Filter>Source Files\File</Filter>
-    </ClCompile>
-    <ClCompile Include="TextReader.cpp">
-      <Filter>Source Files\File</Filter>
-    </ClCompile>
-    <ClCompile Include="StringFunction.cpp">
-      <Filter>Source Files\File</Filter>
-    </ClCompile>
-    <ClCompile Include="System.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ReservationCalendar.cpp">
-      <Filter>Source Files\Logic layer</Filter>
-    </ClCompile>
-    <ClCompile Include="Service.cpp">
-      <Filter>Source Files\Logic layer</Filter>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="UIState.cpp">
+      <Filter>Source\UI</Filter>
     </ClCompile>
     <ClCompile Include="UIPage.cpp">
-      <Filter>Source Files\Ui layer</Filter>
+      <Filter>Source\UI</Filter>
     </ClCompile>
-    <ClCompile Include="UIState.cpp">
-      <Filter>Source Files\Ui layer</Filter>
+    <ClCompile Include="ReservationCalendar.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="TextWriter.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="StringFunction.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Service.cpp">
+      <Filter>Source\Logic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StringFunction.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="TextReader.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="TextWriter.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="ISystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="System.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IReservationCalendar.h">
-      <Filter>Header Files\Logic layer\Reservations</Filter>
-    </ClInclude>
-    <ClInclude Include="ReservationCalendar.h">
-      <Filter>Header Files\Logic layer\Reservations</Filter>
-    </ClInclude>
-    <ClInclude Include="Reservation.h">
-      <Filter>Header Files\Logic layer\Reservations</Filter>
-    </ClInclude>
     <ClInclude Include="Date.h">
-      <Filter>Header Files\Logic layer</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
-      <Filter>Header Files\Logic layer</Filter>
-    </ClInclude>
-    <ClInclude Include="ILibrary.h">
-      <Filter>Header Files\Logic layer\Services</Filter>
+      <Filter>Header\Logic</Filter>
     </ClInclude>
     <ClInclude Include="Filter.h">
-      <Filter>Header Files\Logic layer\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Review.h">
-      <Filter>Header Files\Logic layer\Services</Filter>
+      <Filter>Header\Logic</Filter>
     </ClInclude>
     <ClInclude Include="IAccount.h">
-      <Filter>Header Files\Logic layer\Account</Filter>
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="ILibrary.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="IReservationCalendar.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="ISystem.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservationCalendar.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Review.h">
+      <Filter>Header\Logic</Filter>
     </ClInclude>
     <ClInclude Include="Service.h">
-      <Filter>Header Files\Logic layer\Services</Filter>
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="TestPages.h">
+      <Filter>Header\UI</Filter>
     </ClInclude>
     <ClInclude Include="UIPage.h">
-      <Filter>Header Files\Ui layer</Filter>
+      <Filter>Header\UI</Filter>
     </ClInclude>
     <ClInclude Include="UIState.h">
-      <Filter>Header Files\Ui layer</Filter>
-    <ClInclude Include="TestPages.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header\UI</Filter>
     </ClInclude>
+    <ClInclude Include="TextWriter.h">
+      <Filter>Header\File</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.h">
+      <Filter>Header\File</Filter>
+    </ClInclude>
+    <ClInclude Include="StringFunction.h">
+      <Filter>Header\File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{ea4c7b39-72e6-447e-be99-ba22c5a9ba68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic">
+      <UniqueIdentifier>{1894b439-4518-4744-b97c-a3ed4bdfd153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\UI">
+      <UniqueIdentifier>{1e839a97-a947-424a-87c1-e0470b218729}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{91262f08-dd74-457b-8ca4-d86ca6e0cd81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic">
+      <UniqueIdentifier>{aa54bed1-fc8d-4e6f-9e58-52cd281fed62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI">
+      <UniqueIdentifier>{e6b2bd54-0f45-444f-82de-8a1bc3fcad47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\File">
+      <UniqueIdentifier>{4bc54756-25a4-4ee2-acd0-994a5e97c30f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\File">
+      <UniqueIdentifier>{3e6f102d-4f71-43b7-a550-59f3b8eb7113}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

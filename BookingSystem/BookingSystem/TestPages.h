@@ -1,3 +1,5 @@
+/* Created by: Timmie
+*/
 #pragma once
 
 #include <iostream>
@@ -7,32 +9,44 @@
 
 using namespace std;
 
-// used for testing
+namespace ui {
 
-class Test2UIPage : public UIPage
-{
-	void runPage()
+	// used for testing
+
+	class Test2UIPage : public UIPage
 	{
-		cout << "Enter a word: ";
+	public:
+		Test2UIPage(const UIState& state)
+			: UIPage(state) {}
 
-		string str = getWordInput();
+		void runPage()
+		{
+			cout << "Enter a word: ";
 
-		cout << "Entered " << str << "." << endl;
+			string str = getWordInput();
 
-		UIState::getInstance()->quitUI();
-	}
-};
+			cout << "Entered " << str << "." << endl;
 
-class Test1UIPage : public UIPage
-{
-	void runPage()
+			state.quitUI();
+		}
+	};
+
+	class Test1UIPage : public UIPage
 	{
-		cout << "Enter a number between 5 and 7: ";
+	public:
+		Test1UIPage(const UIState& state)
+			: UIPage(state){}
 
-		int num = getNumberInput(5, 7);
+		void runPage()
+		{
+			cout << "Enter a number between 5 and 7: ";
 
-		cout << "Entered " << num << "." << endl;
+			int num = getNumberInput(5, 7);
 
-		UIState::getInstance()->setNextPage(new Test2UIPage());
-	}
-};
+			cout << "Entered " << num << "." << endl;
+
+			state.setNextPage(new Test2UIPage(state));
+		}
+	};
+
+}
