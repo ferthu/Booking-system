@@ -2,38 +2,38 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ReservationCalendar.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="StringFunction.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="TextWriter.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginUIPage.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="MainUIPage.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
     <ClCompile Include="UIState.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
     <ClCompile Include="UIPage.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
-    <ClCompile Include="ReservationCalendar.cpp">
-      <Filter>Source\Logic</Filter>
-    </ClCompile>
     <ClCompile Include="System.cpp">
       <Filter>Source\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="TextWriter.cpp">
-      <Filter>Source\File</Filter>
-    </ClCompile>
-    <ClCompile Include="TextReader.cpp">
-      <Filter>Source\File</Filter>
-    </ClCompile>
-    <ClCompile Include="StringFunction.cpp">
-      <Filter>Source\File</Filter>
     </ClCompile>
     <ClCompile Include="Service.cpp">
       <Filter>Source\Logic</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
       <Filter>Source\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="MainUIPage.cpp">
-      <Filter>Source\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="LoginUIPage.cpp">
-      <Filter>Source\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,47 +43,43 @@
     <ClInclude Include="ISystem.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="TestPages.h">
-      <Filter>Header\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UIPage.h">
-      <Filter>Header\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UIState.h">
-      <Filter>Header\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="TextWriter.h">
+    <ClInclude Include="StringFunction.h">
       <Filter>Header\File</Filter>
     </ClInclude>
     <ClInclude Include="TextReader.h">
       <Filter>Header\File</Filter>
     </ClInclude>
-    <ClInclude Include="StringFunction.h">
+    <ClInclude Include="TextWriter.h">
       <Filter>Header\File</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="IReservationCalendar.h">
-      <Filter>Header\Logic\Reservation</Filter>
-    </ClInclude>
     <ClInclude Include="ReservationCalendar.h">
-      <Filter>Header\Logic\Reservation</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
       <Filter>Header\Logic\Reservation</Filter>
     </ClInclude>
     <ClInclude Include="Reservation.h">
       <Filter>Header\Logic\Reservation</Filter>
     </ClInclude>
+    <ClInclude Include="IReservationCalendar.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
     <ClInclude Include="Date.h">
       <Filter>Header\Logic\Reservation</Filter>
     </ClInclude>
-    <ClInclude Include="Service.h">
-      <Filter>Header\Logic\Service</Filter>
+    <ClInclude Include="UIState.h">
+      <Filter>Header\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Review.h">
+    <ClInclude Include="UIPage.h">
+      <Filter>Header\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MainUIPage.h">
+      <Filter>Header\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginUIPage.h">
+      <Filter>Header\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
       <Filter>Header\Logic\Service</Filter>
     </ClInclude>
     <ClInclude Include="ILibrary.h">
@@ -91,48 +87,50 @@
     </ClInclude>
     <ClInclude Include="Filter.h">
       <Filter>Header\Logic\Service</Filter>
-=======
+    </ClInclude>
+    <ClInclude Include="Review.h">
+      <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
     <ClInclude Include="Account.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="MainUIPage.h">
-      <Filter>Header\UI</Filter>
+    <ClInclude Include="System.h">
+      <Filter>Header\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="LoginUIPage.h">
+    <ClInclude Include="TestPages.h">
       <Filter>Header\UI</Filter>
->>>>>>> origin/master
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header">
-      <UniqueIdentifier>{ea4c7b39-72e6-447e-be99-ba22c5a9ba68}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Logic">
-      <UniqueIdentifier>{1894b439-4518-4744-b97c-a3ed4bdfd153}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\UI">
-      <UniqueIdentifier>{1e839a97-a947-424a-87c1-e0470b218729}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{91262f08-dd74-457b-8ca4-d86ca6e0cd81}</UniqueIdentifier>
+      <UniqueIdentifier>{1a75864e-878d-4d12-92c1-d0f870f2455d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Logic">
-      <UniqueIdentifier>{aa54bed1-fc8d-4e6f-9e58-52cd281fed62}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\UI">
-      <UniqueIdentifier>{e6b2bd54-0f45-444f-82de-8a1bc3fcad47}</UniqueIdentifier>
+    <Filter Include="Header">
+      <UniqueIdentifier>{c9b1cdcc-bb63-41b0-bfb2-721cbbffa6e4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header\File">
-      <UniqueIdentifier>{4bc54756-25a4-4ee2-acd0-994a5e97c30f}</UniqueIdentifier>
+      <UniqueIdentifier>{c0134840-5a2b-4372-a031-ca26a4de4da1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic">
+      <UniqueIdentifier>{6059ba69-ecd3-4bff-b6a2-0130f31a0314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\UI">
+      <UniqueIdentifier>{a5760219-f835-4829-aeeb-d071c8de04c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\File">
-      <UniqueIdentifier>{3e6f102d-4f71-43b7-a550-59f3b8eb7113}</UniqueIdentifier>
+      <UniqueIdentifier>{67c5a2bc-106a-429f-9fa2-153b89b47b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic">
+      <UniqueIdentifier>{b1817aa6-4806-40ee-ae28-edc3f35e1ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI">
+      <UniqueIdentifier>{aa7ffb07-054c-454f-a951-171f43bd583a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header\Logic\Reservation">
-      <UniqueIdentifier>{95b5a345-e87e-40df-8c45-41323f301b66}</UniqueIdentifier>
+      <UniqueIdentifier>{0885319d-cd9a-4577-94fd-31be61d0382d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header\Logic\Service">
-      <UniqueIdentifier>{88aae39e-ba76-49f8-a910-24a1371b5eee}</UniqueIdentifier>
+      <UniqueIdentifier>{165f167a-5729-473b-877c-13c8c3292779}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
