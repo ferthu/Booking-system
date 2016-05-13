@@ -2,7 +2,6 @@
 */
 
 #include <iostream>
-#include "UIState.h"
 #include "UIPage.h"
 
 using namespace std;
@@ -40,7 +39,8 @@ namespace ui {
 		return str;
 	}
 
-	UIPage::UIPage()
+	UIPage::UIPage(const UIState& state)
+		: state(state)
 	{}
 
 	UIPage::~UIPage()

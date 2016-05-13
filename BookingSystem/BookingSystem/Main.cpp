@@ -2,7 +2,8 @@
 
 #include"System.h"
 #include"UIState.h"
-
+#include"TestPages.h"
+#include<memory>
 
 int main() {
 
@@ -12,6 +13,8 @@ int main() {
 	//There is progress. . . Buffering . . .
 	lic::System sys;
 	ui::UIState ui;
-	//ui.initialize(...)
+	
+	//Runs the ui
+	ui.runUI(new ui::Test1UIPage(ui));
 }
 

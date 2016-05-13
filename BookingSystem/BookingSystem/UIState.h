@@ -1,29 +1,37 @@
+/* Created by: Timmie
+*/
 #ifndef UISTATE_H
 #define UISTATE_H
 
 #include "UIPage.h"
 
-class UIState
-{
-private:
-	static UIState* instance;
+namespace ui {
 
-	UIPage* currentPage;
-	UIPage* nextPage;
-	bool quit;
-	UIState();
+	class UIState
+	{
+	private:
 
-public:
-	static void initialize();
-	static void cleanup();
-	static UIState* getInstance();
+		UIPage* currentPage;
 
-	void quitUI();
-	void setNextPage(UIPage* next);
+		/* Mutable represents variables able to change from const functions
+		*/
 
-	void runUI(UIPage* firstPage);
-};
+		/* Holds the next page when waiting to finish executing the old function
+		*/
+		mutable UIPage* nextPage;
+		/* If a call to exit the ui is called.
+		*/
+		mutable bool quit;
 
+	public:
+		UIState();
+		
+		void quitUI() const;
+		void setNextPage(UIPage* next) const;
 
+		void runUI(UIPage* page);
+	};
+
+}
 
 #endif
