@@ -130,6 +130,8 @@
     </ClInclude>
     <ClInclude Include="UIState.h">
       <Filter>Header Files\Ui layer</Filter>
+    <ClInclude Include="TestPages.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

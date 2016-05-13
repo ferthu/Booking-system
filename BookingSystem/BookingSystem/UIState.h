@@ -1,22 +1,29 @@
-/* Created by: Timmie
-*/
 #ifndef UISTATE_H
 #define UISTATE_H
 
 #include "UIPage.h"
 
-namespace ui {
+class UIState
+{
+private:
+	static UIState* instance;
 
-	class UIState
-	{
-	private:
-		UIPage* currentPage;
+	UIPage* currentPage;
+	UIPage* nextPage;
+	bool quit;
+	UIState();
 
-	public:
-		void swichPage(UIPage* newPage);
-		void initialize(UIPage* firstPage);
-	};
+public:
+	static void initialize();
+	static void cleanup();
+	static UIState* getInstance();
 
-}
+	void quitUI();
+	void setNextPage(UIPage* next);
+
+	void runUI(UIPage* firstPage);
+};
+
+
 
 #endif

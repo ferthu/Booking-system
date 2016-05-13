@@ -169,6 +169,7 @@
     <ClInclude Include="Service.h" />
     <ClInclude Include="StringFunction.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="TestPages.h" />
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWriter.h" />
     <ClInclude Include="Time.h" />

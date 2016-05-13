@@ -1,21 +1,57 @@
-/* Created by: Timmie
-*/
 #include "UIState.h"
 
-namespace ui {
+void UIState::runUI(UIPage* firstPage)
+{
+	currentPage = firstPage;
+	nextPage = nullptr;
+	quit = false;
 
-	void UIState::swichPage(UIPage* newPage)
+	currentPage->runPage();
+
+	while (!quit)
 	{
 		delete currentPage;
 
-		currentPage = newPage;
+		currentPage = nextPage;
+		nextPage = nullptr;
+
 		currentPage->runPage();
+
+		if (nextPage == nullptr && !quit)
+			throw("No next page selected!");
 	}
 
-	void UIState::initialize(UIPage* firstPage)
-	{
-		currentPage = firstPage;
-		currentPage->runPage();
-	}
-
+	delete currentPage;
 }
+
+void UIState::setNextPage(UIPage* next)
+{
+	nextPage = next;
+}
+
+void UIState::initialize()
+{
+	UIState::instance = nullptr;
+}
+
+void UIState::cleanup()
+{
+	delete UIState::instance;
+}
+
+UIState* UIState::getInstance()
+{
+	if (instance == nullptr)
+	{
+		instance = new UIState();
+	}
+
+	return instance;
+}
+
+void UIState::quitUI()
+{
+	quit = true;
+}
+
+UIState::UIState() {}
