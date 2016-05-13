@@ -1,8 +1,8 @@
+#include "System.h"
+#include "UIState.h"
+#include "TestPages.h"
+#include "MainUIPage.h"
 
-
-#include"System.h"
-#include"UIState.h"
-#include"TestPages.h"
 #include<memory>
 
 int main() {
@@ -18,6 +18,6 @@ int main() {
 	ui::UIState ui;
 	
 	//Runs the ui
-	ui.runUI(new ui::Test1UIPage(ui));
+	ui.runUI(new ui::MainUIPage(ui, sys));
 }
 

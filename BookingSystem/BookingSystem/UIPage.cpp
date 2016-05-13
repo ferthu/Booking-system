@@ -40,8 +40,8 @@ namespace ui {
 		return str;
 	}
 
-	UIPage::UIPage(const UIState& state)
-		: state(state)
+	UIPage::UIPage(const UIState& state, lic::System& sys)
+		: state(state), sys(sys)
 	{}
 
 	UIPage::~UIPage()

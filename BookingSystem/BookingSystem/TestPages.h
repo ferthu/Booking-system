@@ -4,6 +4,7 @@
 
 #include <iostream>
 
+#include "System.h"
 #include "UIPage.h"
 #include "UIState.h"
 
@@ -16,8 +17,8 @@ namespace ui {
 	class Test2UIPage : public UIPage
 	{
 	public:
-		Test2UIPage(const UIState& state)
-			: UIPage(state) {}
+		Test2UIPage(const UIState& state, lic::System& sys)
+			: UIPage(state, sys) {}
 
 		void runPage()
 		{
@@ -34,8 +35,8 @@ namespace ui {
 	class Test1UIPage : public UIPage
 	{
 	public:
-		Test1UIPage(const UIState& state)
-			: UIPage(state){}
+		Test1UIPage(const UIState& state, lic::System& sys)
+			: UIPage(state, sys){}
 
 		void runPage()
 		{
@@ -45,7 +46,7 @@ namespace ui {
 
 			cout << "Entered " << num << "." << endl;
 
-			state.setNextPage(new Test2UIPage(state));
+			state.setNextPage(new Test2UIPage(state, sys));
 		}
 	};
 

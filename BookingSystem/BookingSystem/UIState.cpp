@@ -1,6 +1,8 @@
 /* Created by: Timmie
 */
 #include "UIState.h"
+#include "System.h"
+#include <iostream>
 
 namespace ui {
 
@@ -14,7 +16,9 @@ namespace ui {
 		nextPage = nullptr;
 		quit = false;
 
+		std::cout << std::string(100, '\n');
 		currentPage->runPage();
+		std::cout << std::string(100, '\n');
 
 		while (!quit)
 		{
@@ -24,6 +28,7 @@ namespace ui {
 			nextPage = nullptr;
 
 			currentPage->runPage();
+			std::cout << std::string(100, '\n');
 
 			if (nextPage == nullptr && !quit)
 				throw("No next page selected!");

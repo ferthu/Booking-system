@@ -146,7 +146,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="LoginUIPage.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainUIPage.cpp" />
     <ClCompile Include="ReservationCalendar.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="StringFunction.cpp" />
@@ -157,12 +160,15 @@
     <ClCompile Include="UIState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Account.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Filter.h" />
     <ClInclude Include="IAccount.h" />
     <ClInclude Include="ILibrary.h" />
     <ClInclude Include="IReservationCalendar.h" />
     <ClInclude Include="ISystem.h" />
+    <ClInclude Include="LoginUIPage.h" />
+    <ClInclude Include="MainUIPage.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="ReservationCalendar.h" />
     <ClInclude Include="Review.h" />

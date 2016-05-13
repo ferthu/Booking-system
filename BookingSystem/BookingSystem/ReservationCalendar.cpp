@@ -48,7 +48,9 @@ namespace lic {
 	/* Fetches the reservations reserved by the specified account.
 	*/
 	std::vector<Reservation>& ReservationCalendar::getReservations(const std::string& accountName) {
-
+		// temp
+		std::vector<Reservation> reservations;
+		return reservations;
 	}
 
 }
