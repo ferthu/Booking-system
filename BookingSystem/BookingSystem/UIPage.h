@@ -3,6 +3,8 @@
 #ifndef UIPAGE_H
 #define UIPAGE_H
 
+#include "System.h"
+
 #include <string>
 
 namespace ui {
@@ -31,11 +33,14 @@ namespace ui {
 		/* The reference to the ui state
 		*/
 		const UIState& state;
+		/* The reference to the system
+		*/
+		lic::System& sys;
 
 	public:
 		virtual void runPage() = 0;				// implement page code here in inheriting classes
 
-		UIPage(const UIState& state);
+		UIPage(const UIState& state, lic::System& sys);
 		~UIPage();
 	};
 

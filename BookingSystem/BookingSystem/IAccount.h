@@ -17,13 +17,13 @@ namespace lic {
 		virtual std::vector<std::string>& getProfile() = 0;
 		/* Set the profile as a set of strings ?...
 		*/
-		virtual std::vector<std::string>& editProfile() = 0;
+		virtual void editProfile(std::vector<std::string>& profile) = 0;
 		/* Access account name. Used to link system elements with the account.
 		*/
 		virtual std::string& getName() = 0;
 		/* Get the access level of the account
 		*/
-		virtual int getAccessLevel() = 0;
+		//virtual int getAccessLevel() = 0;
 	};
 }
 

@@ -26,6 +26,15 @@
     <ClCompile Include="Service.cpp">
       <Filter>Source\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="Account.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="MainUIPage.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginUIPage.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -81,6 +90,15 @@
     </ClInclude>
     <ClInclude Include="StringFunction.h">
       <Filter>Header\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="MainUIPage.h">
+      <Filter>Header\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginUIPage.h">
+      <Filter>Header\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

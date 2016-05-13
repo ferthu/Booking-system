@@ -2,6 +2,9 @@
 
 #include"ReservationCalendar.h"
 #include"ISystem.h"
+#include "Account.h"
+
+#include <vector>
 
 namespace lic {
 
@@ -16,9 +19,17 @@ namespace lic {
 		/* The system reservation calendar, holding all reservations */
 		ReservationCalendar _calendar;
 
+		/* Vector holding user accounts */
+		std::vector<Account> accounts;
+
+		/* Reference to currently logged in account */
+		lic::Account* signedInAs;
+
 		/* Public access functions.
 		*/
 	public:
+		bool login(std::string username, std::string password);
+
 		System();
 		~System();
 
