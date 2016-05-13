@@ -28,40 +28,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Date.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Filter.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
     <ClInclude Include="IAccount.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="ILibrary.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="IReservationCalendar.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
     <ClInclude Include="ISystem.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="Reservation.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="ReservationCalendar.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Review.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Service.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
     <ClInclude Include="System.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
     <ClInclude Include="TestPages.h">
@@ -81,6 +54,33 @@
     </ClInclude>
     <ClInclude Include="StringFunction.h">
       <Filter>Header\File</Filter>
+    </ClInclude>
+    <ClInclude Include="IReservationCalendar.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservationCalendar.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
+      <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Review.h">
+      <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="ILibrary.h">
+      <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter.h">
+      <Filter>Header\Logic\Service</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +107,12 @@
     </Filter>
     <Filter Include="Source\File">
       <UniqueIdentifier>{3e6f102d-4f71-43b7-a550-59f3b8eb7113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\Reservation">
+      <UniqueIdentifier>{95b5a345-e87e-40df-8c45-41323f301b66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\Service">
+      <UniqueIdentifier>{88aae39e-ba76-49f8-a910-24a1371b5eee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
