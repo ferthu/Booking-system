@@ -24,6 +24,9 @@ namespace lic {
 		/* If the reservation is paid or not.
 		*/
 		bool _paid;
+		/* Name of the account that reserved.
+		*/
+		std::string _accountName;
 		/* Services reserved
 		*/
 		std::vector<std::string> _services;
