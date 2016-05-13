@@ -8,6 +8,16 @@
 namespace ui {
 
 	/* Forward declaration
+	-----------------------
+	Declares UIState class existance but the object can not be used in the header.
+	Only reference or pointer types can be defined in the header as it has no knowledge of the objects size.
+	Forward declaring can be seen as a lazy version of interfaces.
+
+	How to import and use it:
+	-------------------------
+	The class can then be imported from UIPage.cpp if functions should be used for this object.
+	Also every implementation need to import UIState to be able to use it.
+	/Mattias
 	*/
 	class UIState;
 

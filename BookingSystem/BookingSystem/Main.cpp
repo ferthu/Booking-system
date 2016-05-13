@@ -7,10 +7,13 @@
 
 int main() {
 
-	//Memory leak checks
+	//Memory leak check:
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	//There is progress. . . Buffering . . .
+
+	/* System variables on the stack.
+	*/
 	lic::System sys;
 	ui::UIState ui;
 	

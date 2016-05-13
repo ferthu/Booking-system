@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "UIPage.h"
+#include"UIState.h"
 
 using namespace std;
 
