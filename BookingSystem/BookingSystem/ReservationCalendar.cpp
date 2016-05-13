@@ -37,11 +37,17 @@ namespace lic {
 	The reservation will be bound to the specified account.
 	*/
 	void ReservationCalendar::finalize(const Reservation& res, IAccount& account) {
-
+		Reservation found;
+		found._accountName = account.getName();
 	}
 	/* Deletes a reserved reservation in the calendar.
 	*/
 	void ReservationCalendar::editReservation(const Reservation& res) {
+
+	}
+	/* Fetches the reservations reserved by the specified account.
+	*/
+	std::vector<Reservation>& ReservationCalendar::getReservations(const std::string& accountName) {
 
 	}
 

@@ -16,6 +16,7 @@ namespace lic {
 	public:
 		virtual ~IReservationCalendar() {};
 
+
 		/* Fetches a set of available time slots from a reservation setting and a date
 		*/
 		virtual std::vector<Time>& freeReservations(const Reservation& res, const Date date) = 0;
@@ -29,5 +30,9 @@ namespace lic {
 		/* Deletes a reserved reservation in the calendar.
 		*/
 		virtual void editReservation(const Reservation& res) = 0;
+
+		/* Fetches the reservations reserved by the specified account.
+		*/
+		virtual std::vector<Reservation>& getReservations(const std::string& accountName) = 0;
 	};
 }

@@ -30,6 +30,9 @@ namespace lic {
 		/* Deletes a reserved reservation in the calendar.
 		*/
 		virtual void editReservation(const Reservation& res);
+		/* Fetches the reservations reserved by the specified account.
+		*/
+		virtual std::vector<Reservation>& getReservations(const std::string& accountName);
 	};
 
 }
