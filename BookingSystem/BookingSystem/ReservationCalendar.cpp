@@ -17,6 +17,11 @@ namespace lic {
 	ReservationCalendar::~ReservationCalendar()
 	{
 	}
+	/* Access calendar date
+	*/
+	Date ReservationCalendar::getDate() {
+		return _date;
+	}
 
 	/* Calculates a index for the reservation arrays from a specified date.
 	*/

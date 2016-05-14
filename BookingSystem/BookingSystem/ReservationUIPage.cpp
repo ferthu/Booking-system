@@ -1,6 +1,8 @@
 #include "ReservationUIPage.h"
 #include<iostream>
 #include"ReservationCalendar.h"
+#include"ReservationTimeUIPage.h"
+#include"UIState.h"
 
 namespace ui {
 
@@ -15,55 +17,47 @@ namespace ui {
 	{
 	}
 
-	void ReservationUIPage::selectDate() {
-		std::cout << "Enter date a reservation date: ";
-		std::cout << "Enter Year: ";
+	lic::Date ReservationUIPage::selectDate() {
+		std::cout << "Enter a reservation date: ";
+		std::cout << "Year: ";
 		int year = getNumberInput(2016, 2018);
-		std::cout << "Enter Month: ";
+		std::cout << "Month: ";
 		int month = getNumberInput(1, 12);
-		std::cout << "Enter Day: ";
+		std::cout << "Day: ";
 		int day = getNumberInput(0, lic::DAYPERMONTH[month - 1]);
 
-		_reservation._date = lic::Date(year, month, day);
+		return lic::Date(year, month, day);
 	}
 
-	void ReservationUIPage::selectOptions() {
+	void ReservationUIPage::selectOptions(lic::Reservation& res) {
+		//If mentor is selected remove it from the service list to not add it again:
+		for (int i = 0; i < _reservation._services.size(); i++){
+			if (_reservation._services[i] == MENTORSERVICENAME) {
+				_reservation._services.erase(_reservation._services.begin() + i);
+				break;
+			}
+		}
+		std::cout << "Enter reservation options: " << std::endl;
+		std::cout << "Number of players: ";
+		int pCount = getNumberInput(1, 20);
+		std::cout << "Mentor (y/n): ";
+		bool mentor = getTrueFalse();
 
-
-	}
-	void ReservationUIPage::selectTime() {
-
-	}
-	void ReservationUIPage::lastStep() {
-
+		_reservation._players = pCount;
+		if(mentor)
+			_reservation._services.push_back(MENTORSERVICENAME);
 	}
 
 	void ReservationUIPage::runPage()
 	{
-		std::cout << "Booking System\n\n";
-		std::cout << "Reservation\n";
+		std::cout << "Reserve service " + _reservation._services[0] + "\n";
+		std::cout << "Reserve service " + _reservation._services[0] + "\n";
+		
 
-		bool success = false;
-		std::string username;
-		std::string password;
+		selectOptions(_reservation);
+		_reservation._date = selectDate();
 
-		tryLogin(username, password);
-
-		while (username != "0" && !(success = sys.login(username, password))) {
-			std::cout << "Unrecognized username or password.\n\n";
-
-			tryLogin(username, password);
-		}
-
-		if (username != "0")
-		{
-			std::cout << "Logged in as " << username << ".";
-			getchar();
-		}
-		std::cout << "\nAlready signed in as " << sys.getAccount()->getName() << ".";
-		getchar();
-
-		state.setNextPage(new ui::MainUIPage(state, sys));
+		state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation));
 	}
 
 }

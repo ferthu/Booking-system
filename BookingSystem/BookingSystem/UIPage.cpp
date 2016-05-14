@@ -15,6 +15,22 @@ namespace ui {
 		cin.ignore(INT_MAX, '\n');
 	}
 
+	bool UIPage::getTrueFalse()
+	{
+		char response;
+		cin >> response;
+		clearInputBuffer();
+
+		while (response != 'y' && response != 'Y' && 
+			response != 'n'&& response != 'N')
+		{
+			cout << "Enter 'y' or 'n': ";
+			cin >> response;
+			clearInputBuffer();
+		}
+
+		return response == 'y' || response == 'Y';
+	}
 	int UIPage::getNumberInput(int min, int max)
 	{
 		int number;

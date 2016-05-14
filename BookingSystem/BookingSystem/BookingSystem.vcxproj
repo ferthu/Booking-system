@@ -154,6 +154,8 @@
     <ClCompile Include="MainUIPage.cpp" />
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="ReservationCalendar.cpp" />
+    <ClCompile Include="ReservationTimeUIPage.cpp" />
+    <ClCompile Include="ReservationUIPage.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="StringFunction.cpp" />
     <ClCompile Include="System.cpp" />
@@ -176,6 +178,8 @@
     <ClInclude Include="MainUIPage.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="ReservationCalendar.h" />
+    <ClInclude Include="ReservationTimeUIPage.h" />
+    <ClInclude Include="ReservationUIPage.h" />
     <ClInclude Include="Review.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="StringFunction.h" />

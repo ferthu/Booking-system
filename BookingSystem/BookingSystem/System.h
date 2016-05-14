@@ -23,7 +23,8 @@ namespace lic {
 		std::vector<Account> accounts;
 
 		/* Reference to currently logged in account */
-		lic::Account* signedInAs;
+		Account* signedInAs;
+
 
 		/* Public access functions.
 		*/
@@ -39,6 +40,9 @@ namespace lic {
 		/* Access the reservation calendar
 		*/
 		IReservationCalendar& getCalendar();
+		/* Access the current date
+		*/
+		virtual Date getDate();
 	};
 
 }
