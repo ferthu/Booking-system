@@ -7,18 +7,20 @@
 
 namespace ui {
 
+	static const std::string MENTORSERVICENAME = "Mentor";
+
 	class ReservationUIPage :
 		public UIPage
 	{
 	private:
 
+		/* Data holding the reservation information
+		*/
 		lic::Reservation _reservation;
 
 
 		lic::Date selectDate();
 		void selectOptions(lic::Reservation& res);
-		lic::Time selectTime(std::shared_ptr<std::vector<lic::Time>> available);
-		void lastStep();
 
 	public:
 		ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service);

@@ -19,6 +19,11 @@ namespace lic {
 	IReservationCalendar& System::getCalendar() {
 		return _calendar;
 	}
+	/* Access the current date
+	*/
+	Date System::getDate() {
+		return _calendar.getDate();
+	}
 
 	bool System::login(std::string username, std::string password)
 	{

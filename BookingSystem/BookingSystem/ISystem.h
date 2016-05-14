@@ -17,6 +17,10 @@ namespace lic {
 		*/
 		virtual IReservationCalendar& getCalendar() = 0;
 
+		/* Access the current date
+		*/
+		virtual Date getDate() = 0;
+
 		virtual ~ISystem() {};
 	};
 

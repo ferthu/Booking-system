@@ -61,7 +61,9 @@ namespace lic {
 		ReservationCalendar(const Date d);
 		virtual ~ReservationCalendar();
 
-
+		/* Access calendar date
+		*/
+		Date getDate();
 
 
 		/* Fetches a set of available time slots from a reservation setting and a date
