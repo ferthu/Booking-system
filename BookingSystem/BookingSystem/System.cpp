@@ -24,6 +24,11 @@ namespace lic {
 	Date System::getDate() {
 		return _calendar.getDate();
 	}
+	/* Access a library from the system
+	*/
+	ILibrary& getLibrary(const std::string& library) {
+
+	}
 
 	bool System::login(std::string username, std::string password)
 	{

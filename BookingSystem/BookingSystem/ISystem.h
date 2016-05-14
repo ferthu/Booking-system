@@ -1,6 +1,7 @@
 #pragma once
 
 #include"IReservationCalendar.h"
+#include"ILibrary.h"
 
 namespace lic {
 
@@ -20,6 +21,10 @@ namespace lic {
 		/* Access the current date
 		*/
 		virtual Date getDate() = 0;
+
+		/* Access a library from the system
+		*/
+		virtual ILibrary& getLibrary(const std::string& library) = 0;
 
 		virtual ~ISystem() {};
 	};

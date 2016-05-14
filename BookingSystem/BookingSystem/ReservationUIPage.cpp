@@ -2,13 +2,15 @@
 #include<iostream>
 #include"ReservationCalendar.h"
 #include"ReservationTimeUIPage.h"
+#include"MainUIPage.h"
 #include"UIState.h"
+#include"DisplayReservationFunc.h"
 
 namespace ui {
 
 
 	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service)
-		: UIPage(state, sys), _reservation(service)
+		: UIPage(state, sys), _reservation(sys.getDate(), 1, service)
 	{
 	}
 
@@ -17,6 +19,9 @@ namespace ui {
 	{
 	}
 
+
+	/* Display date selection 
+	*/
 	lic::Date ReservationUIPage::selectDate() {
 		std::cout << "Enter a reservation date: ";
 		std::cout << "Year: ";
@@ -28,8 +33,9 @@ namespace ui {
 
 		return lic::Date(year, month, day);
 	}
-
-	void ReservationUIPage::selectOptions(lic::Reservation& res) {
+	/* Display option selection
+	*/
+	void ReservationUIPage::selectOptions(const lic::Reservation& res) {
 		//If mentor is selected remove it from the service list to not add it again:
 		for (int i = 0; i < _reservation._services.size(); i++){
 			if (_reservation._services[i] == MENTORSERVICENAME) {
@@ -47,17 +53,55 @@ namespace ui {
 		if(mentor)
 			_reservation._services.push_back(MENTORSERVICENAME);
 	}
+	/* Displays selection menu
+	*/
+	int ReservationUIPage::displaySelection() {
+		std::cout << "Reservation options: " << std::endl;
+		std::cout << "1. Change options" << std::endl;
+		std::cout << "2. Change date" << std::endl;
+		std::cout << "3. Next step" << std::endl;
+		std::cout << "4. Main menu" << std::endl;
+		std::cout << std::endl;
+		std::cout << "Enter option: " << std::endl;
+		return getNumberInput(1, 4);
+	}
 
 	void ReservationUIPage::runPage()
 	{
-		std::cout << "Reserve service " + _reservation._services[0] + "\n";
-		std::cout << "Reserve service " + _reservation._services[0] + "\n";
-		
+		bool loop = true;
+		while (loop) {
+			//Display reservation information:
+			displayServices(_reservation);
+			displayDate(_reservation);
+			displayPlayer(_reservation);
+			std::cout << std::endl << std::endl << std::endl;
+			displaySelection();
 
-		selectOptions(_reservation);
-		_reservation._date = selectDate();
+			int option = displaySelection();
 
-		state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation));
+			switch (option)
+			{
+			case 1:
+			selectOptions(_reservation);	
+				break;
+			case 2:
+			_reservation._date = selectDate();
+				break;
+			case 3:
+				//Set next page and end loop
+				state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation));
+				loop = false;
+			case 4:
+				//Set main page and end function
+				state.setNextPage(new MainUIPage(state, sys));
+				loop = false;
+			default:
+				break;
+			}
+			//Clears the "page"
+			clearInputBuffer();
+		}
+
 	}
 
 }

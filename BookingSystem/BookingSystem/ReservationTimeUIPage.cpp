@@ -2,6 +2,7 @@
 #include<iostream>
 #include"ReservationCalendar.h"
 #include"ReservationUIPage.h"
+#include"ReservationFinal.h"
 #include"UIState.h"
 
 namespace ui {
@@ -42,7 +43,7 @@ namespace ui {
 			return;
 		}
 		else {
-			state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation));
+			state.setNextPage(new ReservationFinal(state, sys, _reservation));
 		}
 	}
 

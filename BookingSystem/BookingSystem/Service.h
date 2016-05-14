@@ -3,6 +3,7 @@
 #include"Review.h"
 #include<string>
 #include<vector>
+#include"Price.h"
 
 namespace lic {
 
@@ -11,13 +12,13 @@ namespace lic {
 	*/
 	class Service
 	{
-	private:
+	public:
 		/* Service/ product name*/
 		std::string _name;
 		/* Text describing the service*/
 		std::string _description;
 		/* Product price*/
-		int _price;
+		Price _price;
 		/* Average rating*/
 		float _rating;
 		/* Minimum age to buy the service*/
@@ -27,7 +28,6 @@ namespace lic {
 		/* Reviews written of the service*/
 		std::vector<Review> _reviews;
 
-	public:
 		Service();
 		~Service();
 		/* Add a review to the service
@@ -36,6 +36,8 @@ namespace lic {
 		/* Copy the information to the service.
 		*/
 		void updateInformation(Service& service);
+
+
 	};
 
 }

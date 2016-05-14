@@ -40,6 +40,7 @@ namespace ui {
 		/* The reference to the system
 		*/
 		lic::System& sys;
+		
 
 	public:
 		virtual void runPage() = 0;				// implement page code here in inheriting classes

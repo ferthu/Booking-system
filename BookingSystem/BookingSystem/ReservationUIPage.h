@@ -20,7 +20,8 @@ namespace ui {
 
 
 		lic::Date selectDate();
-		void selectOptions(lic::Reservation& res);
+		void selectOptions(const lic::Reservation& res);
+		int displaySelection();
 
 	public:
 		ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service);
