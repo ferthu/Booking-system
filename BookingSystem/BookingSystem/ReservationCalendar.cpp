@@ -135,14 +135,14 @@ namespace lic {
 				return resIndex;
 			}
 		}
-		return 0;
+		return -1;
 	}
 	/*	Finalizes the reservation. Confirming the reservation date & time reserved.
 	The reservation will be bound to the specified account.
 	*/
 	void ReservationCalendar::finalize(const Reservation& res, IAccount& account) {
 		Reservation* ref = nullptr;
-		if(findReservation(res, ref))
+		if(findReservation(res, ref) != -1)
 			ref->_accountName = account.getName();
 	}
 	/* Deletes a reserved reservation in the calendar.
