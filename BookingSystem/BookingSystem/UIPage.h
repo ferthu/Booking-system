@@ -28,6 +28,10 @@ namespace ui {
 	protected:
 		void clearInputBuffer();
 		int getNumberInput(int min, int max);	// gets number between min and max from user
+
+		/* Get a true or false statement ('y'/'n')
+		*/
+		bool getTrueFalse(); 
 		std::string getWordInput();				// gets string from user
 
 		/* The reference to the ui state

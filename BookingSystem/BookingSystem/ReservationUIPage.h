@@ -15,9 +15,9 @@ namespace ui {
 		lic::Reservation _reservation;
 
 
-		void selectDate();
-		void selectOptions();
-		void selectTime();
+		lic::Date selectDate();
+		void selectOptions(lic::Reservation& res);
+		lic::Time selectTime(std::shared_ptr<std::vector<lic::Time>> available);
 		void lastStep();
 
 	public:
