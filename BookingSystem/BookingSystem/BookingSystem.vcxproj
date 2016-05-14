@@ -150,6 +150,7 @@
     <ClCompile Include="LoginUIPage.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainUIPage.cpp" />
+    <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="ReservationCalendar.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="StringFunction.cpp" />

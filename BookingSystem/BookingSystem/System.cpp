@@ -3,6 +3,7 @@
 namespace lic {
 
 	System::System()
+		: _calendar(Date(2016, 05, 14))
 	{
 		signedInAs = nullptr;
 	}

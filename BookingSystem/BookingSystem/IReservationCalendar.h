@@ -5,6 +5,7 @@
 #include"Reservation.h"
 #include"IAccount.h"
 #include<vector>
+#include<memory>
 
 namespace lic {
 
@@ -19,7 +20,7 @@ namespace lic {
 
 		/* Fetches a set of available time slots from a reservation setting and a date
 		*/
-		virtual std::vector<Time>& freeReservations(const Reservation& res, const Date date) = 0;
+		virtual std::shared_ptr<std::vector<Time>> freeReservations(const Reservation& res, const Date date) = 0;
 		/* Reserve the time slot specified for the date, the reservations date/time parameters will be updated.
 		*/
 		virtual bool reserve(Reservation& res, const Date date, const Time time) = 0;

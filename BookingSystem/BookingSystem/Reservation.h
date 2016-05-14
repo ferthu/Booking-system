@@ -31,9 +31,11 @@ namespace lic {
 		*/
 		std::vector<std::string> _services;
 
-		Reservation() {}
-		Reservation(Date date,int players, const std::vector<std::string>& services) 
-		: _date(date), _players(players), _services(services){	}
+		Reservation();
+		Reservation(Date date, int players, const std::vector<std::string>& services);
+		/* Comparison operator
+		*/
+		bool operator==(const Reservation& other) const;
 
 	};
 

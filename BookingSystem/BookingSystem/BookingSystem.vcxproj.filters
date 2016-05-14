@@ -35,6 +35,9 @@
     <ClCompile Include="Account.cpp">
       <Filter>Source\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="Reservation.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
