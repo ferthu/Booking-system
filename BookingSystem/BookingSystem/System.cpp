@@ -3,9 +3,13 @@
 namespace lic {
 
 	System::System()
-		: _calendar(Date(2016, 05, 14))
+		: _calendar(Date(2016, 05, 14)), _libraries()
 	{
 		signedInAs = nullptr;
+
+		//Add system libraries:
+		_libraries.push_back(Library("")); //Dummy library.
+		_libraries.push_back(Library(lib::RESERVATIONLIBRARY));
 	}
 
 
@@ -26,8 +30,14 @@ namespace lic {
 	}
 	/* Access a library from the system
 	*/
-	ILibrary& getLibrary(const std::string& library) {
+	ILibrary& System::getLibrary(const std::string& library) {
 
+		for (unsigned int i = 0; i < _libraries.size(); i++) {
+			if (_libraries[i]._name == library)
+				return _libraries[i];
+		}
+		/*Return the dummy library....*/
+		return _libraries[0];
 	}
 
 	bool System::login(std::string username, std::string password)

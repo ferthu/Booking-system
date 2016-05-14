@@ -44,8 +44,21 @@
     <ClCompile Include="GameDescriptionUIPage.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
-    <ClCompile Include="ReservationUIPage.cpp" />
-    <ClCompile Include="ReservationTimeUIPage.cpp" />
+    <ClCompile Include="ReservationTimeUIPage.cpp">
+      <Filter>Source\UI\Reservation</Filter>
+    </ClCompile>
+    <ClCompile Include="ReservationUIPage.cpp">
+      <Filter>Source\UI\Reservation</Filter>
+    </ClCompile>
+    <ClCompile Include="ReservationFinal.cpp">
+      <Filter>Source\UI\Reservation</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayReservationFunc.cpp">
+      <Filter>Source\UI\Reservation</Filter>
+    </ClCompile>
+    <ClCompile Include="Library.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
@@ -117,8 +130,30 @@
     <ClInclude Include="GameDescriptionUIPage.h">
       <Filter>Header\UI</Filter>
     </ClInclude>
-    <ClInclude Include="ReservationUIPage.h" />
-    <ClInclude Include="ReservationTimeUIPage.h" />
+    <ClInclude Include="ReservationUIPage.h">
+      <Filter>Header\UI\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservationTimeUIPage.h">
+      <Filter>Header\UI\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservationFinal.h">
+      <Filter>Header\UI\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayReservationFunc.h">
+      <Filter>Header\UI\Reservation</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemLibraries.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Price.h">
+      <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemServices.h">
+      <Filter>Header\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Library.h">
+      <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
@@ -150,6 +185,12 @@
     </Filter>
     <Filter Include="Header\Logic\Service">
       <UniqueIdentifier>{165f167a-5729-473b-877c-13c8c3292779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\UI\Reservation">
+      <UniqueIdentifier>{d7b07067-1c76-4b75-ba36-4999e2faefb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI\Reservation">
+      <UniqueIdentifier>{10fa8f0a-2667-492c-90a2-2b288ca9bccf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

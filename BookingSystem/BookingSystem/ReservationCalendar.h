@@ -75,13 +75,13 @@ namespace lic {
 		/*	Finalizes the reservation. Confirming the reservation date & time reserved.
 		The reservation will be bound to the specified account
 		*/
-		virtual void finalize(const Reservation& res, IAccount& account);
+		virtual void finalize(const Reservation& res, const std::string& accountName);
 		/* Deletes a reserved reservation in the calendar.
 		*/
 		virtual void editReservation(const Reservation& res);
 		/* Fetches the reservations reserved by the specified account.
 		*/
-		virtual std::vector<Reservation>& getReservations(const std::string& accountName);
+		virtual std::shared_ptr<std::vector<Reservation>> getReservations(const std::string& accountName);
 	};
 
 }

@@ -17,6 +17,9 @@ struct Price {
 	std::string getPrice() {
 		return std::to_string(_amount / 100) + '.' + std::to_string(_amount % 100);
 	}
+
+#pragma region Price Operators 
+
 	/* Add operator
 	*/
 	Price operator+(const Price& other) {
@@ -39,5 +42,21 @@ struct Price {
 		this->_amount -= other._amount;
 		return *this;
 	}
+
+#pragma endregion
+
+#pragma region Int Operators
+	/* Add operator
+	*/
+	Price operator*(int mult) {
+		return Price(mult * this->_amount);
+	}
+	/* Subtract operator
+	*/
+	Price& operator*=(int mult) {
+		this->_amount *= mult;
+		return *this;
+	}
+#pragma endregion
 
 };

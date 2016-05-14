@@ -3,6 +3,7 @@
 #include"ReservationCalendar.h"
 #include"ISystem.h"
 #include "Account.h"
+#include"Library.h"
 
 #include <vector>
 
@@ -18,13 +19,14 @@ namespace lic {
 
 		/* The system reservation calendar, holding all reservations */
 		ReservationCalendar _calendar;
+		/* System data libraries*/
+		std::vector<Library> _libraries;
 
 		/* Vector holding user accounts */
 		std::vector<Account> accounts;
 
 		/* Reference to currently logged in account */
 		Account* signedInAs;
-
 
 		/* Public access functions.
 		*/

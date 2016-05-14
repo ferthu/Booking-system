@@ -6,9 +6,7 @@
 #include"Reservation.h"
 
 namespace ui {
-
-	static const std::string MENTORSERVICENAME = "Mentor";
-
+	
 	class ReservationUIPage :
 		public UIPage
 	{
@@ -25,6 +23,7 @@ namespace ui {
 
 	public:
 		ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service);
+		ReservationUIPage(const UIState& state, lic::System& sys, const lic::Reservation reservation);
 		~ReservationUIPage();
 
 

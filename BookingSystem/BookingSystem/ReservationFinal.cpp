@@ -1,6 +1,9 @@
 #include "ReservationFinal.h"
 #include"DisplayReservationFunc.h"
 #include<iostream>
+#include"UIState.h"
+#include"MainUIPage.h"
+#include"ReservationUIPage.h"
 
 namespace ui {
 
@@ -18,11 +21,33 @@ namespace ui {
 
 	void ReservationFinal::runPage() {
 		
-		displayReservation(_reservation);
+		std::cout << "Reservation Details:\n\n";
+		displayReservation(_reservation, sys);
+
+		std::cout << "\n\n\n\n";
+		std::cout << "1. Confirm\n";
+		std::cout << "2. Edit\n";
+		std::cout << "3. Cancel\n";
 		
+		int option = getNumberInput(1, 2);
 
-
-
+		if (option == 1) {
+			//Completed reservation go back to main page.
+			lic::IAccount* acc = sys.getAccount();
+			std::string& accountName = acc != nullptr ? acc->getName() : "Unregistrered";
+			sys.getCalendar().finalize(_reservation, accountName);
+			state.setNextPage(new MainUIPage(state, sys));
+		}
+		else if (option == 2) {
+			//Edit reservation again, remove it and go to first stage.
+			sys.getCalendar().editReservation(_reservation);
+			state.setNextPage(new ReservationUIPage(state, sys, _reservation));
+		}
+		else if (option == 3) {
+			//Reservation canceled, remove it and go back to main page.
+			sys.getCalendar().editReservation(_reservation);
+			state.setNextPage(new MainUIPage(state, sys));
+		}
 	}
 
 }

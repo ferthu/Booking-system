@@ -11,7 +11,10 @@ namespace lic {
 		std::map<std::string, Service> _library;
 
 	public:
-		Library();
+
+		const std::string _name;
+
+		Library(const std::string& name);
 		virtual ~Library();
 
 

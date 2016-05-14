@@ -3,7 +3,8 @@
 
 namespace lic {
 
-	Library::Library()
+	Library::Library(const std::string& name)
+		: _name(name)
 	{
 	}
 

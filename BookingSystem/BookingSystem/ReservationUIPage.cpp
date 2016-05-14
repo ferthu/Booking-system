@@ -13,6 +13,10 @@ namespace ui {
 		: UIPage(state, sys), _reservation(sys.getDate(), 1, service)
 	{
 	}
+	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const lic::Reservation res)
+		: UIPage(state, sys), _reservation(res._date, res._players, res._services) {
+
+	}
 
 
 	ReservationUIPage::~ReservationUIPage()
@@ -38,7 +42,7 @@ namespace ui {
 	void ReservationUIPage::selectOptions(const lic::Reservation& res) {
 		//If mentor is selected remove it from the service list to not add it again:
 		for (int i = 0; i < _reservation._services.size(); i++){
-			if (_reservation._services[i] == MENTORSERVICENAME) {
+			if (_reservation._services[i] == ser::MENTOR) {
 				_reservation._services.erase(_reservation._services.begin() + i);
 				break;
 			}
@@ -51,7 +55,7 @@ namespace ui {
 
 		_reservation._players = pCount;
 		if(mentor)
-			_reservation._services.push_back(MENTORSERVICENAME);
+			_reservation._services.push_back(ser::MENTOR);
 	}
 	/* Displays selection menu
 	*/
@@ -74,6 +78,7 @@ namespace ui {
 			displayServices(_reservation);
 			displayDate(_reservation);
 			displayPlayer(_reservation);
+			displayCost(_reservation, sys);
 			std::cout << std::endl << std::endl << std::endl;
 			displaySelection();
 

@@ -112,7 +112,7 @@ namespace lic {
 			if (!slotAvailable(res._services[i], SERVICECOUNT, dateIndex, slotIndex, res._players))
 				return false;
 
-		unsigned int reservationIndex = _reservations.size();
+		int reservationIndex = (int)_reservations.size();
 		//Set reservation date/time
 		res._date = date;
 		res._time = time;
@@ -145,10 +145,12 @@ namespace lic {
 	/*	Finalizes the reservation. Confirming the reservation date & time reserved.
 	The reservation will be bound to the specified account.
 	*/
-	void ReservationCalendar::finalize(const Reservation& res, IAccount& account) {
+	void ReservationCalendar::finalize(const Reservation& res, const std::string& accountName) {
 		Reservation* ref = nullptr;
-		if(findReservation(res, ref) != -1)
-			ref->_accountName = account.getName();
+		if (findReservation(res, ref) != -1) {
+			ref->_accountName = accountName;
+			
+		}
 	}
 	/* Deletes a reserved reservation in the calendar.
 	*/
@@ -171,9 +173,9 @@ namespace lic {
 	}
 	/* Fetches the reservations reserved by the specified account.
 	*/
-	std::vector<Reservation>& ReservationCalendar::getReservations(const std::string& accountName) {
+	std::shared_ptr<std::vector<Reservation>> ReservationCalendar::getReservations(const std::string& accountName) {
 		// temp
-		std::vector<Reservation> reservations;
+		std::shared_ptr<std::vector<Reservation>> reservations(new std::vector<Reservation>()) ;
 		return reservations;
 	}
 

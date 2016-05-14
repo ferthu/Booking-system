@@ -27,25 +27,35 @@ namespace ui {
 	void displayPlayer(const lic::Reservation& res) {
 		std::cout << "Number of players: " << res._players << std::endl << std::endl;
 	}
-
+	/* Display service cost
+	*/
 	void displayCost(const lic::Reservation& res, lic::ISystem& sys) {
+		//Calculate total cost:
 		Price cost = 0;
 		lic::ILibrary& lib = sys.getLibrary(lib::RESERVATIONLIBRARY);
 		for (unsigned int i = 0; i < res._services.size(); i++) {
 			lic::Service service;
 			if (lib.getService(res._services[i], service)) {
-				cost += service._price;
+				cost += service._price * res._players;
 			}
 		}
+		std::cout << "Total cost: " << cost.getPrice() << std::endl;
+	}
+	/* Display payment option for the reservation
+	*/
+	void displayPaymentOption(const lic::Reservation& res) {
+		std::cout << "Payment option: In store" << std::endl;;
 	}
 
 	/* Function displaying a reservation
 	*/
-	void  displayReservation(const lic::Reservation& res) {
+	void  displayReservation(const lic::Reservation& res, lic::ISystem& sys) {
 		displayServices(res);
 		displayDate(res);
 		displayTime(res);
 		displayPlayer(res);
+		displayPaymentOption(res);
+		displayCost(res, sys);
 	}
 
 }
