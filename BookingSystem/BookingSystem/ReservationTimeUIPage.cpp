@@ -26,7 +26,7 @@ namespace ui {
 			std::cout << i << ". " << (*available)[i]._hour << '.' << (*available)[i]._minute << std::endl;
 		std::cout << "0. Back" << std::endl;
 		std::cout << "Select time slot: ";
-		int timeSelected = getNumberInput(0, available->size());
+		size_t timeSelected = getNumberInput(0, available->size());
 
 		//If 0 was selected go back to reservation settings.
 		if (timeSelected == 0)

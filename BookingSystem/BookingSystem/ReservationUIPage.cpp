@@ -26,7 +26,7 @@ namespace ui {
 		std::cout << "Day: ";
 		int day = getNumberInput(0, lic::DAYPERMONTH[month - 1]);
 
-		_reservation._date = lic::Date(year, month, day);
+		return lic::Date(year, month, day);
 	}
 
 	void ReservationUIPage::selectOptions(lic::Reservation& res) {

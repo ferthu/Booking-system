@@ -44,6 +44,8 @@
     <ClCompile Include="GameDescriptionUIPage.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ReservationUIPage.cpp" />
+    <ClCompile Include="ReservationTimeUIPage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
@@ -115,6 +117,8 @@
     <ClInclude Include="GameDescriptionUIPage.h">
       <Filter>Header\UI</Filter>
     </ClInclude>
+    <ClInclude Include="ReservationUIPage.h" />
+    <ClInclude Include="ReservationTimeUIPage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
