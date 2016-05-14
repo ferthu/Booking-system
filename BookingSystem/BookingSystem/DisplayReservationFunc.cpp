@@ -1,3 +1,6 @@
+/* Mattias Fredriksson
+*/
+
 #include"DisplayReservationFunc.h"
 #include<iostream>
 

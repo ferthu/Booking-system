@@ -30,7 +30,8 @@ namespace lic {
 		*/
 		Date _date;
 
-		/* Time slots linked to the reservations. Holds 
+		/* Time slots linked to the reservations. Each time slot holds links to all reservations booking the time slot. 
+		Solution allows a single reservation to book multiple time slots (Reservations can for now only book a single slot...)
 		*/
 		std::vector<std::vector<std::vector<int>>> _timeslots;
 		/* Reservations reserved in the system. Holds a set of reservations for each day.

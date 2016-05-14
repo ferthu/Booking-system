@@ -15,7 +15,7 @@ namespace lic {
 		/* Reservation date
 		*/
 		Date _date;
-		/* Reservated time
+		/* Reservated time slot
 		*/
 		Time _time;
 		/* Number of players reserved for

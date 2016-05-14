@@ -1,3 +1,6 @@
+/* Mattias Fredriksson
+*/
+
 #include "ReservationTimeUIPage.h"
 #include<iostream>
 #include"ReservationCalendar.h"

@@ -1,3 +1,5 @@
+/* Mattias Fredriksson
+*/
 #include "ReservationFinal.h"
 #include"DisplayReservationFunc.h"
 #include<iostream>
@@ -39,7 +41,7 @@ namespace ui {
 			state.setNextPage(new MainUIPage(state, sys));
 		}
 		else if (option == 2) {
-			//Edit reservation again, remove it and go to first stage.
+			//Remove the reservation and go to reservation edit stage.
 			sys.getCalendar().editReservation(_reservation);
 			state.setNextPage(new ReservationUIPage(state, sys, _reservation));
 		}
