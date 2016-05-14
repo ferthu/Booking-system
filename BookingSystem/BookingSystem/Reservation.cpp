@@ -7,6 +7,10 @@ namespace lic {
 	Reservation::Reservation(Date date, int players, const std::vector<std::string>& services)
 		: _date(date), _players(players), _services(services) {	}
 
+	Reservation::Reservation(const std::vector<std::string>& services)
+	: _services(services) {
+	}
+
 
 	/* Comparison operator
 	*/
