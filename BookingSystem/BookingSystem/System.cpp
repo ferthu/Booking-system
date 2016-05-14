@@ -38,4 +38,9 @@ namespace lic {
 		}
 		return false;
 	}
+
+	void System::addAccount(lic::Account newAccount)
+	{
+		accounts.push_back(newAccount);
+	}
 }

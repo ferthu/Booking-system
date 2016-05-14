@@ -2,7 +2,13 @@
 
 #include "Account.h"
 
-std::vector<std::string>& lic::Account::getProfile()
+lic::Account::Account(std::string name, std::string password)
+{
+	this->name = name;
+	this->password = password;
+}
+
+std::vector<std::string> lic::Account::getProfile()
 {
 	std::vector<std::string> profile;
 

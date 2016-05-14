@@ -16,6 +16,10 @@ int main() {
 	*/
 	lic::System sys;
 	ui::UIState ui;
+
+	/* Adds accounts to the system */
+	lic::Account acc1 = lic::Account("xX_coolguy_420_Xx", "XD");
+	sys.addAccount(acc1);
 	
 	//Runs the ui
 	ui.runUI(new ui::MainUIPage(ui, sys));

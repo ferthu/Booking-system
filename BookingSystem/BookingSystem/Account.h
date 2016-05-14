@@ -18,10 +18,11 @@ namespace lic {
 
 	public:
 		virtual ~Account() {};
+		Account(std::string name, std::string password);
 
 		/* Get the profile as a set of strings ?...
 		*/
-		virtual std::vector<std::string>& getProfile();
+		virtual std::vector<std::string> getProfile();
 		/* Set the profile as a set of strings ?...
 		*/
 		virtual void editProfile(std::vector<std::string>& profile);

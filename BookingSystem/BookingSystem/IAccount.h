@@ -14,7 +14,7 @@ namespace lic {
 
 		/* Get the profile as a set of strings ?...
 		*/
-		virtual std::vector<std::string>& getProfile() = 0;
+		virtual std::vector<std::string> getProfile() = 0;
 		/* Set the profile as a set of strings ?...
 		*/
 		virtual void editProfile(std::vector<std::string>& profile) = 0;
