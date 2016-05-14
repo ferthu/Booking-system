@@ -43,4 +43,9 @@ namespace lic {
 	{
 		accounts.push_back(newAccount);
 	}
+
+	Account* System::getAccount()
+	{
+		return signedInAs;
+	}
 }

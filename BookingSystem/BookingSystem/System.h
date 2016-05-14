@@ -30,6 +30,7 @@ namespace lic {
 	public:
 		bool login(std::string username, std::string password);
 		void addAccount(lic::Account newAccount);
+		Account* getAccount();
 
 		System();
 		~System();
