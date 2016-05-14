@@ -3,10 +3,10 @@
 
 void ui::LoginUIPage::tryLogin(std::string& username, std::string& password)
 {
-	std::cout << "Enter username or 'back' to go back: ";
+	std::cout << "Enter username or '0' to go back: ";
 	username = getWordInput();
 
-	if (username != "back")
+	if (username != "0")
 	{
 		std::cout << "Enter password: ";
 		password = getWordInput();
@@ -26,13 +26,13 @@ void ui::LoginUIPage::runPage()
 
 		tryLogin(username, password);
 
-		while (username != "back" && !(success = sys.login(username, password))) {
+		while (username != "0" && !(success = sys.login(username, password))) {
 			std::cout << "Unrecognized username or password.\n\n";
 
 			tryLogin(username, password);
 		}
 
-		if (username != "back")
+		if (username != "0")
 		{
 			std::cout << "Logged in as " << username << ".";
 			getchar();

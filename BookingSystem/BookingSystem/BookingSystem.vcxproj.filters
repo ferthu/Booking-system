@@ -38,6 +38,12 @@
     <ClCompile Include="Reservation.cpp">
       <Filter>Source\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="LibraryUIPage.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDescriptionUIPage.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
@@ -101,6 +107,12 @@
       <Filter>Header\Logic</Filter>
     </ClInclude>
     <ClInclude Include="TestPages.h">
+      <Filter>Header\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="LibraryUIPage.h">
+      <Filter>Header\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDescriptionUIPage.h">
       <Filter>Header\UI</Filter>
     </ClInclude>
   </ItemGroup>

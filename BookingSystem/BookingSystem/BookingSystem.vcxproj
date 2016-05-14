@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="GameDescriptionUIPage.cpp" />
+    <ClCompile Include="LibraryUIPage.cpp" />
     <ClCompile Include="LoginUIPage.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainUIPage.cpp" />
@@ -164,10 +166,12 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Filter.h" />
+    <ClInclude Include="GameDescriptionUIPage.h" />
     <ClInclude Include="IAccount.h" />
     <ClInclude Include="ILibrary.h" />
     <ClInclude Include="IReservationCalendar.h" />
     <ClInclude Include="ISystem.h" />
+    <ClInclude Include="LibraryUIPage.h" />
     <ClInclude Include="LoginUIPage.h" />
     <ClInclude Include="MainUIPage.h" />
     <ClInclude Include="Reservation.h" />
