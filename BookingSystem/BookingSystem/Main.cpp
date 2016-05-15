@@ -15,7 +15,7 @@ int main() {
 	/* System variables is created on the stack.
 	*/
 	lic::System sys;
-	ui::UIState ui;
+	ui::UIState ui(sys);
 
 	/* Adds accounts to the system */
 	lic::Account acc1 = lic::Account("xX_coolguy_420_Xx", "XD");

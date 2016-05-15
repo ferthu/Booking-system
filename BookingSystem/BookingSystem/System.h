@@ -31,9 +31,11 @@ namespace lic {
 		/* Public access functions.
 		*/
 	public:
-		bool login(std::string username, std::string password);
-		void addAccount(lic::Account newAccount);
-		Account* getAccount();
+		virtual bool login(std::string username, std::string password);
+		virtual void addAccount(lic::Account newAccount);
+		/* Access the logged in account in the system
+		*/
+		IAccount* getAccount();
 
 		System();
 		~System();
@@ -41,7 +43,7 @@ namespace lic {
 
 		/* Access the reservation calendar
 		*/
-		IReservationCalendar& getCalendar();
+		virtual IReservationCalendar& getCalendar();
 		/* Access the current date
 		*/
 		virtual Date getDate();

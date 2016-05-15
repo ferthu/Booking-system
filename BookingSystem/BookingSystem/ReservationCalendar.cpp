@@ -2,6 +2,12 @@
 */
 #include "ReservationCalendar.h"
 
+/* Comments:
+- Kan fortfarande finnas buggar vid special fall!
+- Boka flera slots i samma reservation finns support för men funktionerna tar just nu bara in ett slot, 
+	lite kod behöver ändras för support!
+*/
+
 
 namespace lic {
 
@@ -23,6 +29,11 @@ namespace lic {
 		return _date;
 	}
 
+	/* Validates that a date index is not outside available calendar slots:
+	*/
+	bool ReservationCalendar::calendarDateExist(int dateIndex) {
+		return dateIndex < 0 || dateIndex >= _reservations.size();
+	}
 	/* Calculates a index for the reservation arrays from a specified date.
 	*/
 	int ReservationCalendar::dateToIndex(const Date& d) {
@@ -92,11 +103,17 @@ namespace lic {
 	/* Fetches a set of available time slots from a reservation setting and a date
 	*/
 	std::shared_ptr<std::vector<Time>> ReservationCalendar::freeReservations(const Reservation& res, const Date date) {
+		//Get date index:
+		int dateIndex = dateToIndex(res._date);
 		//Populate an array of available times:
 		std::shared_ptr<std::vector<Time>> free(new std::vector<Time>(SLOTPERDAY));
+		if (calendarDateExist(dateIndex)) {
+			//No available reservations exist outside calendar date:
+			free->clear();
+			return free;
+		}
 		for (int i = 0; i < SLOTPERDAY; i++)
 			(*free)[i] = slotIndexToTime(i);
-		int dateIndex = dateToIndex(res._date);
 		//For each service booked sort away un-availabel time slots:
 		for (unsigned int i = 0; i < res._services.size(); i++)
 			sortAvailable(res._services[i], res._players, dateIndex, *free);
@@ -110,6 +127,8 @@ namespace lic {
 
 		//Convert the time variables to indices in the data arrays:
 		int dateIndex = dateToIndex(date);
+		if (calendarDateExist(dateIndex))
+			return false; //Reservation not possible outside calendar list!
 		int beginSlotIndex = timeToSlotIndex(time);
 		int endSlotIndex = timeToSlotIndex(time); //Reservation can only represent a single slot for now...
 
@@ -143,6 +162,8 @@ namespace lic {
 	int ReservationCalendar::findReservation(const Reservation& res, Reservation*& ref){
 		//Convert the time variables to indices in the data arrays:
 		int dateIndex = dateToIndex(res._date);
+		if (calendarDateExist(dateIndex))
+			return -1; //No reservation outside calendar list!
 		int slotIndex = timeToSlotIndex(res._time);
 		//Loop over the time slots and compare the reservations linked from them:
 		for (unsigned int i = 0; i < _timeslots[dateIndex][slotIndex].size(); i++) {
@@ -170,6 +191,8 @@ namespace lic {
 	void ReservationCalendar::editReservation(const Reservation& res) {
 		//Convert the time variables to indices in the data arrays:
 		int dateIndex = dateToIndex(res._date);
+		if (calendarDateExist(dateIndex))
+			return; //Cant delete reservation outside calendar list!
 		int beginSlotIndex = timeToSlotIndex(res._time);
 		int endSlotIndex = timeToSlotIndex(res._time);
 		if (dateIndex < 0)

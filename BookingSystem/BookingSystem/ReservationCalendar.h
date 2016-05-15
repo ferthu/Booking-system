@@ -40,6 +40,10 @@ namespace lic {
 		/* Calculates a index for the reservation arrays from a specified date.
 		*/
 		int dateToIndex(const Date& d);
+
+		/* Validates that a date index is not outside available calendar slots:
+		*/
+		bool calendarDateExist(int dateIndex);
 		/* Converts time to a slot index
 		*/
 		int timeToSlotIndex(const Time t);

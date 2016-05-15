@@ -12,7 +12,7 @@ namespace ui
 	class MainUIPage : public UIPage
 	{
 	public:
-		MainUIPage(const UIState& state, lic::System& sys)
+		MainUIPage(const UIState& state, lic::ISystem& sys)
 			: UIPage(state, sys) {}
 		virtual ~MainUIPage() {}
 

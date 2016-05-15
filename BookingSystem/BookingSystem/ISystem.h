@@ -2,6 +2,8 @@
 
 #include"IReservationCalendar.h"
 #include"ILibrary.h"
+#include"IAccount.h"
+#include"Account.h"
 #include"SystemServices.h"
 #include"SystemLibraries.h"
 
@@ -16,6 +18,13 @@ namespace lic {
 		Todo: Add UI access functions 
 		*/
 
+		/* Login to the system.
+		*/
+		virtual bool login(std::string username, std::string password)= 0;
+		/* Add account to the system
+		*/
+		virtual void addAccount(lic::Account newAccount) = 0;
+
 		/* Access the reservation calendar
 		*/
 		virtual IReservationCalendar& getCalendar() = 0;
@@ -27,6 +36,9 @@ namespace lic {
 		/* Access a library from the system
 		*/
 		virtual ILibrary& getLibrary(const std::string& library) = 0;
+		/* Access the logged in account in the system
+		*/
+		virtual IAccount* getAccount() = 0;
 
 		virtual ~ISystem() {};
 	};

@@ -3,12 +3,13 @@
 #include "UIState.h"
 #include "System.h"
 #include <iostream>
+#include"MainUIPage.h"
 
 namespace ui {
 
-	UIState::UIState()
-	{
-	}
+	UIState::UIState(lic::ISystem& sys)
+		: sys(sys)
+	{}
 	UIState::~UIState() {
 		if(currentPage != nullptr)
 			delete currentPage;
@@ -34,15 +35,16 @@ namespace ui {
 			nextPage = nullptr;
 
 			currentPage->runPage();
-			std::cout << std::string(100, '\n');
+			currentPage->clearPage(); //Clear console window
 
 			if (nextPage == nullptr && !quit)
-				throw("No next page selected!");
+				nextPage = new MainUIPage(*this, sys);
 		}
 	}
 
-	void UIState::setNextPage(UIPage* next) const
+	void UIState::setNextPage(UIPage* next, bool clearPage) const
 	{
+		_clearPage = clearPage;
 		nextPage = next;
 	}
 

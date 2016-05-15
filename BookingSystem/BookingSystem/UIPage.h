@@ -26,6 +26,8 @@ namespace ui {
 	class UIPage
 	{
 	protected:
+		/* Clears input buffer from bad data
+		*/
 		void clearInputBuffer();
 		int getNumberInput(int min, int max);	// gets number between min and max from user
 
@@ -39,13 +41,16 @@ namespace ui {
 		const UIState& state;
 		/* The reference to the system
 		*/
-		lic::System& sys;
+		lic::ISystem& sys;
 		
 
 	public:
+		/* Clears the page by adding line breakers:
+		*/
+		void clearPage();
 		virtual void runPage() = 0;				// implement page code here in inheriting classes
 
-		UIPage(const UIState& state, lic::System& sys);
+		UIPage(const UIState& state, lic::ISystem& sys);
 		virtual ~UIPage();
 	};
 

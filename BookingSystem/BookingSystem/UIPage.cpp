@@ -14,19 +14,24 @@ namespace ui {
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
 	}
+	/* Clears the page by adding line breakers
+	*/
+	void UIPage::clearPage() {
+		std::cout << std::string(100, '\n');
+	}
 
 	bool UIPage::getTrueFalse()
 	{
 		char response;
 		cin >> response;
-		//clearInputBuffer();
+		clearInputBuffer();
 
 		while (response != 'y' && response != 'Y' && 
 			response != 'n'&& response != 'N')
 		{
 			cout << "Enter 'y' or 'n': ";
 			cin >> response;
-			//clearInputBuffer();
+			clearInputBuffer();
 		}
 
 		return response == 'y' || response == 'Y';
@@ -57,7 +62,7 @@ namespace ui {
 	}
 
 
-	UIPage::UIPage(const UIState& state, lic::System& sys)
+	UIPage::UIPage(const UIState& state, lic::ISystem& sys)
 		: state(state), sys(sys)
 	{}
 
