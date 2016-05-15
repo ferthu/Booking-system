@@ -6,7 +6,7 @@
 namespace lic {
 
 	ReservationCalendar::ReservationCalendar(const Date d)
-	:	_timeslots(DAYPERMONTH[d._month]), _reservations(d._month)
+	:	_timeslots(DAYPERMONTH[d._month]), _reservations(d._month), _date(d)
 	{
 		for (int i = 0; i < DAYPERMONTH[d._month]; i++) {
 			_timeslots[i].resize(SLOTPERDAY);
@@ -105,10 +105,14 @@ namespace lic {
 	/* Reserve the time slot specified for the date, the reservations date/time parameters will be updated.
 	*/
 	bool ReservationCalendar::reserve(Reservation& res, const Date date, const Time time) {
+
+// Note: the date variable isn't passed correctly /Timmie
+
 		//Convert the time variables to indices in the data arrays:
-		int dateIndex = dateToIndex(date);
+		int dateIndex = dateToIndex(res._date);
 		int beginSlotIndex = timeToSlotIndex(time);
 		int endSlotIndex = timeToSlotIndex(time); //Reservation can only represent a single slot for now...
+
 		if (endSlotIndex < beginSlotIndex)
 			return false; //Error, reservation cannot end before it begins...
 
@@ -123,7 +127,9 @@ namespace lic {
 
 		int reservationIndex = (int)_reservations.size();
 		//Set reservation date/time
-		res._date = date;
+		
+// disabled, date isn't passed correctly /Timmie
+		//res._date = date;
 		res._time = time;
 		_reservations[dateIndex].push_back(res);
 

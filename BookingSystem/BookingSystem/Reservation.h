@@ -33,6 +33,7 @@ namespace lic {
 
 		Reservation();
 		Reservation(Date date, int players, const std::vector<std::string>& services);
+		Reservation(Date date, int players, const std::string& service);
 		Reservation(const std::vector<std::string>& services);
 		/* Comparison operator
 		*/

@@ -23,7 +23,8 @@ namespace ui {
 	void displayServices(const lic::Reservation& res) {
 		std::cout << "Services:" << std::endl;
 		for (int i = 0; i < res._services.size(); i++)
-			std::cout << i + 1 << ". " << res._services[0] << std::endl;
+			std::cout << i + 1 << ". " << res._services[i] << std::endl;
+		std::cout <<  std::endl;
 	}
 	/* Display the player count
 	*/

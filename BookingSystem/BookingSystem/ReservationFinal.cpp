@@ -31,7 +31,7 @@ namespace ui {
 		std::cout << "2. Edit\n";
 		std::cout << "3. Cancel\n";
 		
-		int option = getNumberInput(1, 2);
+		int option = getNumberInput(1, 3);
 
 		if (option == 1) {
 			//Completed reservation go back to main page.

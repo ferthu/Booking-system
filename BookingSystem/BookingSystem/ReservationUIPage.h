@@ -23,6 +23,7 @@ namespace ui {
 
 	public:
 		ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service);
+		ReservationUIPage(const UIState& state, lic::System& sys, const std::string& service);
 		ReservationUIPage(const UIState& state, lic::System& sys, const lic::Reservation reservation);
 		~ReservationUIPage();
 

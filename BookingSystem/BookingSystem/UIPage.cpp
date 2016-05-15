@@ -19,14 +19,14 @@ namespace ui {
 	{
 		char response;
 		cin >> response;
-		clearInputBuffer();
+		//clearInputBuffer();
 
 		while (response != 'y' && response != 'Y' && 
 			response != 'n'&& response != 'N')
 		{
 			cout << "Enter 'y' or 'n': ";
 			cin >> response;
-			clearInputBuffer();
+			//clearInputBuffer();
 		}
 
 		return response == 'y' || response == 'Y';
@@ -55,8 +55,6 @@ namespace ui {
 
 		return str;
 	}
-
-
 
 
 	UIPage::UIPage(const UIState& state, lic::System& sys)

@@ -16,6 +16,13 @@ namespace ui {
 		: UIPage(state, sys), _reservation(sys.getDate(), 1, service)
 	{
 	}
+
+	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const std::string& service)
+		: UIPage(state, sys), _reservation(sys.getDate(), 1, service)
+	{
+
+	}
+
 	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const lic::Reservation res)
 		: UIPage(state, sys), _reservation(res._date, res._players, res._services) {
 
@@ -30,13 +37,30 @@ namespace ui {
 	/* Display date selection 
 	*/
 	lic::Date ReservationUIPage::selectDate() {
-		std::cout << "Enter a reservation date: ";
-		std::cout << "Year: ";
-		int year = getNumberInput(2016, 2018);
-		std::cout << "Month: ";
-		int month = getNumberInput(1, 12);
-		std::cout << "Day: ";
-		int day = getNumberInput(0, lic::DAYPERMONTH[month - 1]);
+
+		bool loop = true;
+
+		int year, month, day;
+
+		while (loop)
+		{
+			std::cout << "Enter a reservation date:\n";
+			std::cout << "Year: ";
+			year = getNumberInput(2016, 2018);
+			std::cout << "Month: ";
+			month = getNumberInput(1, 12);
+			std::cout << "Day: ";
+			day = getNumberInput(0, lic::DAYPERMONTH[month - 1]);
+
+			// check if date is today or in the future
+			if (sys.getDate()._year <= year)
+				if (sys.getDate()._month <= month)
+					if (sys.getDate()._day <= day)
+						loop = false;
+
+			if (loop)
+				std::cout << "Invalid date!\n";
+		}
 
 		return lic::Date(year, month, day);
 	}
@@ -59,6 +83,8 @@ namespace ui {
 		_reservation._players = pCount;
 		if(mentor)
 			_reservation._services.push_back(ser::MENTOR);
+
+		std::cout << "\n\n";
 	}
 	/* Displays selection menu
 	*/
@@ -75,6 +101,12 @@ namespace ui {
 
 	void ReservationUIPage::runPage()
 	{
+		std::cout << "Booking System\n\nBook Services\n\n";
+
+		displayServices(_reservation);
+		_reservation._date = selectDate();
+		std::cout << "\n\n";
+
 		bool loop = true;
 		while (loop) {
 			//Display reservation information:
@@ -83,31 +115,32 @@ namespace ui {
 			displayPlayer(_reservation);
 			displayCost(_reservation, sys);
 			std::cout << std::endl << std::endl << std::endl;
-			displaySelection();
 
 			int option = displaySelection();
+			std::cout << "\n";
 
 			switch (option)
 			{
 			case 1:
-			selectOptions(_reservation);	
+				selectOptions(_reservation);
 				break;
 			case 2:
-			_reservation._date = selectDate();
+				_reservation._date = selectDate();
 				break;
 			case 3:
 				//Set next page and end loop
 				state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation));
 				loop = false;
+				break;
 			case 4:
 				//Set main page and end function
 				state.setNextPage(new MainUIPage(state, sys));
 				loop = false;
+				break;
 			default:
 				break;
 			}
-			//Clears the "page"
-			clearInputBuffer();
+			
 		}
 
 	}

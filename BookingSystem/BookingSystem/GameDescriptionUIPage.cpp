@@ -1,5 +1,8 @@
 #include "GameDescriptionUIPage.h"
 #include "LibraryUIPage.h"
+#include "ReservationUIPage.h"
+#include "Reservation.h"
+#include "Service.h"
 
 ui::GameDescriptionUIPage::GameDescriptionUIPage(const UIState& state, lic::System& sys, const lic::Service service)
 	: UIPage(state, sys)
@@ -24,6 +27,6 @@ void ui::GameDescriptionUIPage::runPage()
 	}
 	else
 	{
-		// go to booking page
+		state.setNextPage(new ui::ReservationUIPage(state, sys, _service._name));
 	}
 }

@@ -7,6 +7,12 @@ namespace lic {
 	Reservation::Reservation(Date date, int players, const std::vector<std::string>& services)
 		: _services(services), _date(date), _players(players),  _time(), _accountName(""), _paid(false) {	}
 
+	Reservation::Reservation(Date date, int players, const std::string& service)
+		: _date(date), _players(players), _time(), _accountName(""), _paid(false)
+	{
+		_services.push_back(service);
+	}
+
 	Reservation::Reservation(const std::vector<std::string>& services)
 	: _services(services), _date(), _players(1), _time(), _accountName(""), _paid(false) {
 	}
