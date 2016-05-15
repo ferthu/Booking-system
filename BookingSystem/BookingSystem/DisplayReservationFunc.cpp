@@ -13,10 +13,23 @@ namespace ui {
 	void displayDate(const lic::Reservation& res) {
 		std::cout << "Date: " << res._date._year << '-' << res._date._month << '-' << res._date._day << std::endl;
 	}
+	/* Display the time var (does not call newline)
+	*/
+	void displayTime(lic::Time t) {
+		if (t._hour < 10)
+			std::cout << '0';
+		std::cout << t._hour;
+		std::cout << ':';
+		if(t._minute < 10)
+			std::cout << '0';
+		std::cout << t._minute;
+	}
 	/* Display the time
 	*/
 	void displayTime(const lic::Reservation& res) {
-		std::cout << "Time: " << res._time._hour << '.' << res._time._minute << std::endl;
+		std::cout << "Time: ";
+		displayTime(res._time);
+		std::cout << std::endl;
 	}
 	/* Display the services
 	*/
@@ -43,7 +56,7 @@ namespace ui {
 				cost += service._price * res._players;
 			}
 		}
-		std::cout << "Total cost: " << cost.getPrice() << std::endl;
+		std::cout << "Total cost: " << cost.getPrice() << '$' << std::endl;
 	}
 	/* Display payment option for the reservation
 	*/

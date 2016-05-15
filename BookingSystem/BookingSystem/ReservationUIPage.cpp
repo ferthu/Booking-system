@@ -52,13 +52,14 @@ namespace ui {
 			std::cout << "Day: ";
 			day = getNumberInput(0, lic::DAYPERMONTH[month - 1]);
 
+			lic::Date today = sys.getDate();
 			// check if date is today or in the future
-			if (sys.getDate()._year <= year)
-				if (sys.getDate()._month <= month)
-					if (sys.getDate()._day <= day)
-						loop = false;
-
-			if (loop)
+			if (today._year < year || //Year is in the future
+				(today._year == year && today._month < month) || //Specified month is in the future (year is not passed)
+				(today._year == year && today._month == month && today._day <= day)) { //Current day in the month is not passed.
+				loop = false; //Date OK!
+			}
+			else //Continue loop
 				std::cout << "Invalid date!\n";
 		}
 

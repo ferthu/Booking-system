@@ -35,8 +35,10 @@ namespace ui {
 			nextPage = nullptr;
 
 			currentPage->runPage();
-			currentPage->clearPage(); //Clear console window
+			if(_clearPage)
+				currentPage->clearPage(); //Clear console window if specified
 
+			//If no new page was specified: Return to mainpage
 			if (nextPage == nullptr && !quit)
 				nextPage = new MainUIPage(*this, sys);
 		}

@@ -7,6 +7,7 @@
 #include"ReservationUIPage.h"
 #include"ReservationFinal.h"
 #include"UIState.h"
+#include"DisplayReservationFunc.h"
 
 namespace ui {
 
@@ -21,13 +22,19 @@ namespace ui {
 	{
 	}
 
+
 	void ReservationTimeUIPage::runPage()
 	{
 
 		std::shared_ptr<std::vector<lic::Time>> available = sys.getCalendar().freeReservations(_reservation, _reservation._date);
 		std::cout << "Select an available time slot:" << std::endl;
-		for (unsigned int i = 0; i < available->size(); i++)
-			std::cout << i + 1 << ". " << (*available)[i]._hour << ':' << (*available)[i]._minute << std::endl;
+		for (unsigned int i = 0; i < available->size(); i++) {
+			std::cout << i + 1 << ".  ";
+			if (i + 1 < 10) //Even the character count
+				std::cout << ' ';
+			displayTime(available->operator[](i));
+			std::cout << std::endl;
+		}
 		std::cout << "0. Back" << std::endl;
 		std::cout << "Select time slot: ";
 		int timeSelected = getNumberInput(0, (int)available->size());
@@ -42,8 +49,9 @@ namespace ui {
 			bool success = sys.getCalendar().reserve(_reservation, _reservation._date, t);
 			//If reservation was not a success the process needs to be done again
 			if (!success) {
-				state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation));
-				std::cout << "Error: reservation time was occupied during selection process." << std::endl;
+				state.setNextPage(new ReservationTimeUIPage(state, sys, _reservation), false);
+				clearPage();
+				std::cout << "Error: reservation time was occupied during selection process.\n\n\n\n";
 				return;
 			}
 			else {

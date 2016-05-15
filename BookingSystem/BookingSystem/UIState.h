@@ -37,6 +37,10 @@ namespace ui {
 		~UIState();
 		
 		void quitUI() const;
+		/* Set next page
+		next << Next page to be displayed
+		clearPage << True if the current page should be cleared from console on swap (Default: True)
+		*/
 		void setNextPage(UIPage* next, bool clearPage = true) const;
 
 		void runUI(UIPage* page);
