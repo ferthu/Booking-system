@@ -10,7 +10,7 @@
 
 namespace ui {
 
-	ReservationTimeUIPage::ReservationTimeUIPage(const UIState& state, lic::System& sys, const lic::Reservation& res)
+	ReservationTimeUIPage::ReservationTimeUIPage(const UIState& state, lic::ISystem& sys, const lic::Reservation& res)
 		: UIPage(state, sys), _reservation(res._date, res._players, res._services)
 	{
 

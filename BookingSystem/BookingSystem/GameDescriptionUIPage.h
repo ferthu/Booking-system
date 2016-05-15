@@ -15,7 +15,7 @@ namespace ui
 		lic::Service _service;
 
 	public:
-		GameDescriptionUIPage(const UIState& state, lic::System& sys, const lic::Service service);
+		GameDescriptionUIPage(const UIState& state, lic::ISystem& sys, const lic::Service service);
 		virtual ~GameDescriptionUIPage() {}
 
 		void runPage();

@@ -12,7 +12,7 @@ namespace ui {
 		lic::Reservation _reservation;
 
 	public:
-		ReservationTimeUIPage(const UIState& state, lic::System& sys, const lic::Reservation& res);
+		ReservationTimeUIPage(const UIState& state, lic::ISystem& sys, const lic::Reservation& res);
 		virtual ~ReservationTimeUIPage();
 
 

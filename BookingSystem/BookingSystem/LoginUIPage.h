@@ -15,7 +15,7 @@ namespace ui
 		// help function
 		void tryLogin(std::string& username, std::string& password);
 	public:
-		LoginUIPage(const UIState& state, lic::System& sys)
+		LoginUIPage(const UIState& state, lic::ISystem& sys)
 			: UIPage(state, sys) {}
 		virtual ~LoginUIPage() {}
 

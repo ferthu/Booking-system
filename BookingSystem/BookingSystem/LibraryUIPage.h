@@ -12,7 +12,7 @@ namespace ui
 	class LibraryUIPage : public UIPage
 	{
 	public:
-		LibraryUIPage(const UIState& state, lic::System& sys)
+		LibraryUIPage(const UIState& state, lic::ISystem& sys)
 			: UIPage(state, sys) {}
 
 		virtual ~LibraryUIPage(){}

@@ -4,7 +4,7 @@
 #include "Reservation.h"
 #include "Service.h"
 
-ui::GameDescriptionUIPage::GameDescriptionUIPage(const UIState& state, lic::System& sys, const lic::Service service)
+ui::GameDescriptionUIPage::GameDescriptionUIPage(const UIState& state, lic::ISystem& sys, const lic::Service service)
 	: UIPage(state, sys)
 {
 	_service = service;

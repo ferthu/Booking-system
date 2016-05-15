@@ -12,18 +12,18 @@
 namespace ui {
 
 
-	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service)
+	ReservationUIPage::ReservationUIPage(const UIState& state, lic::ISystem& sys, const std::vector<std::string>& service)
 		: UIPage(state, sys), _reservation(sys.getDate(), 1, service)
 	{
 	}
 
-	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const std::string& service)
+	ReservationUIPage::ReservationUIPage(const UIState& state, lic::ISystem& sys, const std::string& service)
 		: UIPage(state, sys), _reservation(sys.getDate(), 1, service)
 	{
 
 	}
 
-	ReservationUIPage::ReservationUIPage(const UIState& state, lic::System& sys, const lic::Reservation res)
+	ReservationUIPage::ReservationUIPage(const UIState& state, lic::ISystem& sys, const lic::Reservation res)
 		: UIPage(state, sys), _reservation(res._date, res._players, res._services) {
 
 	}

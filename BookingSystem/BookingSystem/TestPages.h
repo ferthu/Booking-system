@@ -17,7 +17,7 @@ namespace ui {
 	class Test2UIPage : public UIPage
 	{
 	public:
-		Test2UIPage(const UIState& state, lic::System& sys)
+		Test2UIPage(const UIState& state, lic::ISystem& sys)
 			: UIPage(state, sys) {}
 		virtual ~Test2UIPage() {}
 
@@ -36,7 +36,7 @@ namespace ui {
 	class Test1UIPage : public UIPage
 	{
 	public:
-		Test1UIPage(const UIState& state, lic::System& sys)
+		Test1UIPage(const UIState& state, lic::ISystem& sys)
 			: UIPage(state, sys){}
 		virtual ~Test1UIPage() {}
 
