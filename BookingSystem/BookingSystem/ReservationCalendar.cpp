@@ -64,11 +64,11 @@ namespace lic {
 				Reservation& res = _reservations[dateIndex][slotlist[resIndex]];
 				for (unsigned int i = 0; i < res._services.size(); i++) {	
 					if (res._services[i] == serviceName)
-						reservedCount++;
+						reservedCount += res._players;
 				}
 			}
 			//If there are more reservations then available services the booking cannot be made.
-			return reservedCount + playerCount > maxReservationCount;
+			return reservedCount + playerCount <= maxReservationCount;
 	}
 	/* Sort availability for a specified service from a available time slots.
 	Given a reservation date and number of players.
@@ -80,7 +80,7 @@ namespace lic {
 		for (unsigned int i = 0; i < available.size(); i++) {
 			//Calculate available slot
 			int slotIndex = timeToSlotIndex(available[i]);
-			if (slotAvailable(serviceName, serviceCount, dateIndex, slotIndex, playerCount)) {
+			if (!slotAvailable(serviceName, serviceCount, dateIndex, slotIndex, playerCount)) {
 				//Remove the available time and decrement the loop to accomodate the removed value.
 				available.erase(available.begin() + slotIndex);
 				slotIndex--;
@@ -109,7 +109,7 @@ namespace lic {
 // Note: the date variable isn't passed correctly /Timmie
 
 		//Convert the time variables to indices in the data arrays:
-		int dateIndex = dateToIndex(res._date);
+		int dateIndex = dateToIndex(date);
 		int beginSlotIndex = timeToSlotIndex(time);
 		int endSlotIndex = timeToSlotIndex(time); //Reservation can only represent a single slot for now...
 
@@ -125,11 +125,9 @@ namespace lic {
 			}
 		}
 
-		int reservationIndex = (int)_reservations.size();
+		int reservationIndex = (int)_reservations[dateIndex].size();
 		//Set reservation date/time
-		
-// disabled, date isn't passed correctly /Timmie
-		//res._date = date;
+		res._date = date;
 		res._time = time;
 		_reservations[dateIndex].push_back(res);
 
@@ -142,18 +140,17 @@ namespace lic {
 
 	/* Finds a reference for a reservation in the calendar equal to the specified reservation data.
 	*/
-	int ReservationCalendar::findReservation(const Reservation& res, Reservation* ref){
+	int ReservationCalendar::findReservation(const Reservation& res, Reservation*& ref){
 		//Convert the time variables to indices in the data arrays:
 		int dateIndex = dateToIndex(res._date);
 		int slotIndex = timeToSlotIndex(res._time);
 		//Loop over the time slots and compare the reservations linked from them:
 		for (unsigned int i = 0; i < _timeslots[dateIndex][slotIndex].size(); i++) {
 			int resIndex = _timeslots[dateIndex][slotIndex][i];
-			Reservation& reserved = _reservations[dateIndex][resIndex];
 			//Check if equal
-			if (res == reserved) {
+			if (res == _reservations[dateIndex][resIndex]) {
 				//The reservation is found!
-				ref = &reserved;
+				ref = &_reservations[dateIndex][resIndex];
 				return resIndex;
 			}
 		}
@@ -201,11 +198,15 @@ namespace lic {
 			}
 		}
 		//Erase the reservation, first swap it with the last Reservation element
-		int lastIndex = (int)_reservations.size() - 1;
+		int lastIndex = (int)resList.size() - 1;
 		std::swap(resList[resIndex], resList[lastIndex]);
 		//Erase Reservation obj, it's now the last element in the vector:
-		_reservations[dateIndex].erase(resList.begin() + lastIndex);
+		resList.erase(resList.begin() + lastIndex);
 
+		/* Last part is to update the links to the swapped element:
+		*/
+		if (lastIndex == resIndex)
+			return; //The swapped element was the last element so no need to update!
 		//Find the begin and end slot index of the swapped reservation:
 		beginSlotIndex = timeToSlotIndex(resList[resIndex]._time);
 		endSlotIndex = timeToSlotIndex(resList[resIndex]._time);

@@ -9,6 +9,12 @@ namespace ui {
 	UIState::UIState()
 	{
 	}
+	UIState::~UIState() {
+		if(currentPage != nullptr)
+			delete currentPage;
+		if(nextPage != nullptr)
+			delete nextPage;
+	}
 
 	void UIState::runUI(UIPage* firstPage)
 	{
@@ -33,8 +39,6 @@ namespace ui {
 			if (nextPage == nullptr && !quit)
 				throw("No next page selected!");
 		}
-
-		delete currentPage;
 	}
 
 	void UIState::setNextPage(UIPage* next) const

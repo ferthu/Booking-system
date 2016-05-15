@@ -101,14 +101,13 @@ namespace ui {
 
 	void ReservationUIPage::runPage()
 	{
-		std::cout << "Booking System\n\nBook Services\n\n";
-
-		displayServices(_reservation);
-		_reservation._date = selectDate();
-		std::cout << "\n\n";
+		//Reservation is set initially for current date:
+		_reservation._date = sys.getDate();
 
 		bool loop = true;
 		while (loop) {
+			std::cout << "Booking System\n\n";
+			std::cout << "\n\n";
 			//Display reservation information:
 			displayServices(_reservation);
 			displayDate(_reservation);
@@ -140,7 +139,8 @@ namespace ui {
 			default:
 				break;
 			}
-			
+			//Break between pages:
+			std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 		}
 
 	}

@@ -25,6 +25,7 @@ namespace ui {
 
 	public:
 		UIState();
+		~UIState();
 		
 		void quitUI() const;
 		void setNextPage(UIPage* next) const;

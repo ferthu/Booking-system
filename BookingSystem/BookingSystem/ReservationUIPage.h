@@ -25,7 +25,7 @@ namespace ui {
 		ReservationUIPage(const UIState& state, lic::System& sys, const std::vector<std::string>& service);
 		ReservationUIPage(const UIState& state, lic::System& sys, const std::string& service);
 		ReservationUIPage(const UIState& state, lic::System& sys, const lic::Reservation reservation);
-		~ReservationUIPage();
+		virtual ~ReservationUIPage();
 
 
 		virtual void runPage();

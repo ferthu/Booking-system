@@ -19,6 +19,7 @@ namespace ui {
 	public:
 		Test2UIPage(const UIState& state, lic::System& sys)
 			: UIPage(state, sys) {}
+		virtual ~Test2UIPage() {}
 
 		void runPage()
 		{
@@ -37,6 +38,7 @@ namespace ui {
 	public:
 		Test1UIPage(const UIState& state, lic::System& sys)
 			: UIPage(state, sys){}
+		virtual ~Test1UIPage() {}
 
 		void runPage()
 		{

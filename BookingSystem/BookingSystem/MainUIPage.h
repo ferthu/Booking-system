@@ -14,6 +14,7 @@ namespace ui
 	public:
 		MainUIPage(const UIState& state, lic::System& sys)
 			: UIPage(state, sys) {}
+		virtual ~MainUIPage() {}
 
 		void runPage();
 	};

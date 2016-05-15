@@ -57,7 +57,7 @@ namespace lic {
 
 		/* Finds a reference for a reservation in the calendar equal to the specified reservation data.
 		*/
-		int findReservation(const Reservation& res, Reservation* ref);
+		int findReservation(const Reservation& res, Reservation*& ref);
 	public:
 		ReservationCalendar(const Date d);
 		virtual ~ReservationCalendar();

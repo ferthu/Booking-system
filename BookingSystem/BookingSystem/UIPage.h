@@ -46,7 +46,7 @@ namespace ui {
 		virtual void runPage() = 0;				// implement page code here in inheriting classes
 
 		UIPage(const UIState& state, lic::System& sys);
-		~UIPage();
+		virtual ~UIPage();
 	};
 
 }

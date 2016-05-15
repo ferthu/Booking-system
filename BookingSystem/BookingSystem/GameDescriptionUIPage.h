@@ -16,6 +16,7 @@ namespace ui
 
 	public:
 		GameDescriptionUIPage(const UIState& state, lic::System& sys, const lic::Service service);
+		virtual ~GameDescriptionUIPage() {}
 
 		void runPage();
 	};

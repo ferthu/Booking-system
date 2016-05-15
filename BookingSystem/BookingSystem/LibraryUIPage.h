@@ -15,6 +15,8 @@ namespace ui
 		LibraryUIPage(const UIState& state, lic::System& sys)
 			: UIPage(state, sys) {}
 
+		virtual ~LibraryUIPage(){}
+
 		void runPage();
 	};
 }

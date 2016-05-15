@@ -11,7 +11,7 @@ namespace ui {
 
 	public:
 		ReservationFinal(const UIState& state, lic::System& sys, const lic::Reservation& res);
-		~ReservationFinal();
+		virtual ~ReservationFinal();
 
 		virtual void runPage();
 	};
