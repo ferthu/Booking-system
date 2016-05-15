@@ -12,11 +12,10 @@ namespace ui
 	class GameDescriptionUIPage : public UIPage
 	{
 	private:
-		const lic::Service& _service;
+		lic::Service _service;
 
 	public:
-		GameDescriptionUIPage(const UIState& state, lic::System& sys, const lic::Service& service)
-			: UIPage(state, sys), _service(service) {}
+		GameDescriptionUIPage(const UIState& state, lic::System& sys, const lic::Service service);
 
 		void runPage();
 	};

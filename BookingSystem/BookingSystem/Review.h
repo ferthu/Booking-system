@@ -9,6 +9,7 @@ namespace lic {
 	/* Object holding information related to a review of a product/service offered in the system.
 	*/
 	class Review {
+	public:
 		/* Rating from the review
 		*/
 		int _rating;
