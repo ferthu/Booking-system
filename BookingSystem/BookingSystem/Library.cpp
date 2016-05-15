@@ -16,8 +16,8 @@ namespace lic {
 
 	/* Get services in the library filtered with the specified filter.
 	*/
-	std::shared_ptr<std::vector<const Service&>> Library::getServices(const Filter& f) {
-		std::shared_ptr<std::vector<const Service&>> services(new std::vector<Service>());
+	std::shared_ptr<std::vector<Service>> Library::getServices(const Filter& f) {
+		std::shared_ptr<std::vector<Service>> services(new std::vector<Service>());
 
 
 		//Loop over the map and add to the list

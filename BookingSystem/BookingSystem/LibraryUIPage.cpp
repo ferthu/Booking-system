@@ -11,14 +11,14 @@ void ui::LibraryUIPage::runPage()
 
 	lic::Filter f;
 	//Fetch list:
-	std::shared_ptr<std::vector<const lic::Service&>>& list = sys.getLibrary(lib::RESERVATIONLIBRARY).getServices(f);
+	std::shared_ptr<std::vector<lic::Service>>& list = sys.getLibrary(lib::RESERVATIONLIBRARY).getServices(f);
 
 	//Print list:
 	for (unsigned int i = 0; i < list->size(); i++) 
 		std::cout << i << ". " << list->operator[](i)._name;
 
 	std::cout << "\nSelect a game (or '0' to go back): ";
-	int selection = getNumberInput(0, (int)list->size() - 1);
+	int selection = getNumberInput(0, (int)list->size());
 
 	if (selection == 0)
 	{

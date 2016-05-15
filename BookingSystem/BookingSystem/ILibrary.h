@@ -17,7 +17,7 @@ namespace lic {
 		
 		/* Get services in the library filtered with the specified filter.
 		*/
-		virtual std::shared_ptr<std::vector<const Service&>> getServices(const Filter& f) = 0;
+		virtual std::shared_ptr<std::vector<Service>> getServices(const Filter& f) = 0;
 
 		/* Get service with the specific name.
 		name	<<	Name of the service
