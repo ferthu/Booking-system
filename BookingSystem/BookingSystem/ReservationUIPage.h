@@ -22,8 +22,8 @@ namespace ui {
 		int displaySelection();
 
 	public:
-		ReservationUIPage(const UIState& state, lic::ISystem& sys, const std::vector<std::string>& service);
-		ReservationUIPage(const UIState& state, lic::ISystem& sys, const std::string& service);
+		ReservationUIPage(const UIState& state, lic::ISystem& sys, const std::vector<ServiceType>& service);
+		ReservationUIPage(const UIState& state, lic::ISystem& sys, const ServiceType& service);
 		ReservationUIPage(const UIState& state, lic::ISystem& sys, const lic::Reservation reservation);
 		virtual ~ReservationUIPage();
 

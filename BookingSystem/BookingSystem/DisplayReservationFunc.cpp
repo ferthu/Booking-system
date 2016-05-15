@@ -36,7 +36,7 @@ namespace ui {
 	void displayServices(const lic::Reservation& res) {
 		std::cout << "Services:" << std::endl;
 		for (int i = 0; i < res._services.size(); i++)
-			std::cout << i + 1 << ". " << res._services[i] << std::endl;
+			std::cout << i + 1 << ". " << res._services[i]._name << std::endl;
 		std::cout <<  std::endl;
 	}
 	/* Display the player count
@@ -49,11 +49,11 @@ namespace ui {
 	void displayCost(const lic::Reservation& res, lic::ISystem& sys) {
 		//Calculate total cost:
 		Price cost = 0;
-		lic::ILibrary& lib = sys.getLibrary(lib::RESERVATIONLIBRARY);
 		for (unsigned int i = 0; i < res._services.size(); i++) {
+			lic::ILibrary& lib = sys.getLibrary(res._services[i]._type);
 			lic::Service service;
-			if (lib.getService(res._services[i], service)) {
-				cost += service._price * res._players;
+			if (lib.getService(res._services[i]._name, service)) {
+				cost += service._price * res.getReservationCount(i);
 			}
 		}
 		std::cout << "Total cost: " << cost.getPrice() << '$' << std::endl;

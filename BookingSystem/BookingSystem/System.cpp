@@ -3,13 +3,14 @@
 namespace lic {
 
 	System::System()
-		: _calendar(Date(2016, 05, 14)), _libraries()
+		: _calendar(Date(2016, 05, 14), 5, 2), _libraries()
 	{
 		signedInAs = nullptr;
 
 		//Add system libraries:
 		_libraries.push_back(Library("")); //Dummy library.
-		_libraries.push_back(Library(lib::RESERVATIONLIBRARY));
+		_libraries.push_back(Library(lib::GAMELIBRARY));
+		_libraries.push_back(Library(lib::MENTORLIBRARY));
 	}
 
 

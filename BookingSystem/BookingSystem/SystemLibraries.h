@@ -7,6 +7,7 @@
 namespace lib {
 	
 	/* Reservation library containing services that are a "reservation product"*/
-	static const std::string RESERVATIONLIBRARY = "Reserved";
+	static const std::string GAMELIBRARY = "Game";
+	static const std::string MENTORLIBRARY = "Mentor";
 
 }

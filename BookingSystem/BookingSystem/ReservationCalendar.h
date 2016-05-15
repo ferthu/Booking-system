@@ -16,9 +16,6 @@ namespace lic {
 	static const int SLOTSPERHOUR = 1;
 	static const int MINPERSLOT = 60 / SLOTSPERHOUR;
 	static const int SLOTPERDAY = SLOTSPERHOUR * 24; //Slots per hour and open 24/7
-	/* Number of services that can be reserved at the same time:
-	*/
-	static const int SERVICECOUNT = 5;
 
 	/* Calendar implementation.
 	*/
@@ -29,6 +26,7 @@ namespace lic {
 		/* Current date
 		*/
 		Date _date;
+		unsigned int _machineCount, _mentorCount;
 
 		/* Time slots linked to the reservations. Each time slot holds links to all reservations booking the time slot. 
 		Solution allows a single reservation to book multiple time slots (Reservations can for now only book a single slot...)
@@ -52,23 +50,27 @@ namespace lic {
 		Time slotIndexToTime(int slotIndex);
 
 		/* Sort availability for a specified service from a available time slots. 
-		Given a set of reservations and number of players.
+		Given a set of reservations and number of reservations of the service.
 		*/
-		void sortAvailable(const std::string& serviceName, int playerCount, int dateIndex, std::vector<Time>& available);
+		void sortAvailable(const ServiceType& serviceName, int resCount, int dateIndex, std::vector<Time>& available);
 		/* Return if a specific slot is available
 		*/
-		bool slotAvailable(const std::string& serviceName, int maxReservationCount, int dateIndex, int slotIndex, int playerCount);
+		bool slotAvailable(const ServiceType& serviceType, int dateIndex, int slotIndex, int resCount);
 
 		/* Finds a reference for a reservation in the calendar equal to the specified reservation data.
 		*/
 		int findReservation(const Reservation& res, Reservation*& ref);
 	public:
-		ReservationCalendar(const Date d);
+		ReservationCalendar(const Date d, unsigned int machineCount, unsigned int mentorCount);
 		virtual ~ReservationCalendar();
 
 		/* Access calendar date
 		*/
 		Date getDate();
+
+		/* Get the number of available services
+		*/
+		int getServiceCount(const ServiceType& service);
 
 
 		/* Fetches a set of available time slots from a reservation setting and a date

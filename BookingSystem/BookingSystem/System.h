@@ -48,7 +48,6 @@ namespace lic {
 		*/
 		virtual Date getDate();
 
-
 		/* Access a library from the system
 		*/
 		virtual ILibrary& getLibrary(const std::string& library);

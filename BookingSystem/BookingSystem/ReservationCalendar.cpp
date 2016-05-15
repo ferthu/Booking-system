@@ -1,6 +1,7 @@
 /* Created by: Mattias Fredriksson
 */
 #include "ReservationCalendar.h"
+#include"SystemServices.h"
 
 /* Comments:
 - Kan fortfarande finnas buggar vid special fall!
@@ -11,8 +12,8 @@
 
 namespace lic {
 
-	ReservationCalendar::ReservationCalendar(const Date d)
-	:	_timeslots(DAYPERMONTH[d._month]), _reservations(d._month), _date(d)
+	ReservationCalendar::ReservationCalendar(const Date d, unsigned int machineCount, unsigned int mentorCount)
+	:	_timeslots(DAYPERMONTH[d._month]), _reservations(d._month), _date(d), _machineCount(machineCount), _mentorCount(mentorCount)
 	{
 		for (int i = 0; i < DAYPERMONTH[d._month]; i++) {
 			_timeslots[i].resize(SLOTPERDAY);
@@ -27,6 +28,17 @@ namespace lic {
 	*/
 	Date ReservationCalendar::getDate() {
 		return _date;
+	}
+
+
+	/* Get the number of available services
+	*/
+	int ReservationCalendar::getServiceCount(const ServiceType& service) {
+		if (service._type == ser::MENTOR)
+			return _mentorCount;
+		else { //If it's a game:
+			return _machineCount;
+		}
 	}
 
 	/* Validates that a date index is not outside available calendar slots:
@@ -67,31 +79,31 @@ namespace lic {
 		return Time(i / SLOTSPERHOUR, (i % SLOTSPERHOUR) * MINPERSLOT);
 	}
 
-	bool ReservationCalendar::slotAvailable(const std::string& serviceName, int maxReservationCount, int dateIndex, int slotIndex, int playerCount) {
-
-			int reservedCount = 0;
-			const std::vector<int>& slotlist = _timeslots[dateIndex][slotIndex];
-			for (unsigned int resIndex = 0; resIndex < slotlist.size(); resIndex++) {
-				Reservation& res = _reservations[dateIndex][slotlist[resIndex]];
-				for (unsigned int i = 0; i < res._services.size(); i++) {	
-					if (res._services[i] == serviceName)
-						reservedCount += res._players;
-				}
+	bool ReservationCalendar::slotAvailable(const ServiceType& serviceType, int dateIndex, int slotIndex, int resCount) {
+		//Fetch the maximum slots for the service type
+		int maxReservationCount = getServiceCount(serviceType);
+		int reservedCount = 0;
+		const std::vector<int>& slotlist = _timeslots[dateIndex][slotIndex];
+		for (unsigned int resIndex = 0; resIndex < slotlist.size(); resIndex++) {
+			Reservation& res = _reservations[dateIndex][slotlist[resIndex]];
+			for (unsigned int i = 0; i < res._services.size(); i++) {
+				//Count the number of services booked:
+				if (res._services[i]._type == serviceType._type)
+					reservedCount += res.getReservationCount(i);
 			}
-			//If there are more reservations then available services the booking cannot be made.
-			return reservedCount + playerCount <= maxReservationCount;
+		}
+		//If there are more reservations then available services the booking cannot be made.
+		return reservedCount + resCount <= maxReservationCount;
 	}
 	/* Sort availability for a specified service from a available time slots.
 	Given a reservation date and number of players.
 	*/
-	void ReservationCalendar::sortAvailable(const std::string& serviceName, int playerCount, int dateIndex, std::vector<Time>& available) {
-		//Number of services available:
-		int serviceCount = SERVICECOUNT;
+	void ReservationCalendar::sortAvailable(const ServiceType& serviceName, int resCount, int dateIndex, std::vector<Time>& available) {
 
 		for (unsigned int i = 0; i < available.size(); i++) {
 			//Calculate available slot
 			int slotIndex = timeToSlotIndex(available[i]);
-			if (!slotAvailable(serviceName, serviceCount, dateIndex, slotIndex, playerCount)) {
+			if (!slotAvailable(serviceName, dateIndex, slotIndex, resCount)) {
 				//Remove the available time and decrement the loop to accomodate the removed value.
 				available.erase(available.begin() + slotIndex);
 				slotIndex--;
@@ -116,7 +128,7 @@ namespace lic {
 			(*free)[i] = slotIndexToTime(i);
 		//For each service booked sort away un-availabel time slots:
 		for (unsigned int i = 0; i < res._services.size(); i++)
-			sortAvailable(res._services[i], res._players, dateIndex, *free);
+			sortAvailable(res._services[i], res.getReservationCount(i), dateIndex, *free);
 		return free;
 	}
 	/* Reserve the time slot specified for the date, the reservations date/time parameters will be updated.
@@ -124,7 +136,6 @@ namespace lic {
 	bool ReservationCalendar::reserve(Reservation& res, const Date date, const Time time) {
 
 // Note: the date variable isn't passed correctly /Timmie
-
 		//Convert the time variables to indices in the data arrays:
 		int dateIndex = dateToIndex(date);
 		if (calendarDateExist(dateIndex))
@@ -139,7 +150,7 @@ namespace lic {
 		for (unsigned int i = 0; i < res._services.size(); i++) {
 			//Loop over every slot the reservation wants to reserve and validate availability:
 			for (int slotIndex = beginSlotIndex; slotIndex <= endSlotIndex; slotIndex++) {
-				if (!slotAvailable(res._services[i], SERVICECOUNT, dateIndex, slotIndex, res._players))
+				if (!slotAvailable(res._services[i], dateIndex, slotIndex, res.getReservationCount(i)))
 					return false;
 			}
 		}

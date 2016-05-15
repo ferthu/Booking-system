@@ -12,9 +12,8 @@ ui::GameDescriptionUIPage::GameDescriptionUIPage(const UIState& state, lic::ISys
 
 void ui::GameDescriptionUIPage::runPage()
 {
-	std::cout << "Booking System\n\n";
-	std::cout << _service._name << "\n\n";
-	std::cout << "Description: " << _service._description << "\n\n";
+	std::cout <<  _service._name << "\n\n";
+	std::cout << "Description: \n" << _service._description << "\n\n";
 	std::cout << "0. Go Back\n";
 	std::cout << "1. Book Game\n";
 	std::cout << "\nSelect an option: ";
@@ -27,6 +26,6 @@ void ui::GameDescriptionUIPage::runPage()
 	}
 	else
 	{
-		state.setNextPage(new ui::ReservationUIPage(state, sys, _service._name));
+		state.setNextPage(new ui::ReservationUIPage(state, sys, ServiceType(_service._name, ser::GAME)));
 	}
 }

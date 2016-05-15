@@ -4,7 +4,7 @@
 #include<vector>
 #include"Date.h"
 #include"Time.h"
-
+#include"ServiceType.h"
 
 
 namespace lic {
@@ -29,12 +29,18 @@ namespace lic {
 		std::string _accountName;
 		/* Services reserved
 		*/
-		std::vector<std::string> _services;
+		std::vector<ServiceType> _services;
 
 		Reservation();
-		Reservation(Date date, int players, const std::vector<std::string>& services);
-		Reservation(Date date, int players, const std::string& service);
-		Reservation(const std::vector<std::string>& services);
+		Reservation(Date date, int players, const std::vector<ServiceType>& services);
+		Reservation(Date date, int players, const std::string& service, const std::string& service_type);
+		Reservation(Date date, int players, const ServiceType service);
+		Reservation(const std::vector<ServiceType>& services);
+
+		/* Get how reservations of a type reserved
+		*/
+		int getReservationCount(unsigned int index) const;
+
 		/* Comparison operator
 		*/
 		bool operator==(const Reservation& other) const;

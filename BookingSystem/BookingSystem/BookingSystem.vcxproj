@@ -189,6 +189,7 @@
     <ClInclude Include="ReservationUIPage.h" />
     <ClInclude Include="Review.h" />
     <ClInclude Include="Service.h" />
+    <ClInclude Include="ServiceType.h" />
     <ClInclude Include="StringFunction.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemLibraries.h" />
