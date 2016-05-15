@@ -16,8 +16,15 @@ namespace lic {
 
 	/* Get services in the library filtered with the specified filter.
 	*/
-	std::shared_ptr<std::vector<Service>> Library::getServices(const Filter& f) {
-		std::shared_ptr<std::vector<Service>> services(new std::vector<Service>());
+	std::shared_ptr<std::vector<const Service&>> Library::getServices(const Filter& f) {
+		std::shared_ptr<std::vector<const Service&>> services(new std::vector<Service>());
+
+
+		//Loop over the map and add to the list
+		for (std::map<std::string, Service>::iterator it = _library.begin(); it != _library.end(); ++it)
+			//Todo: Filter the loop
+			services->push_back(it->second);
+
 		return services;
 	}
 
@@ -38,6 +45,7 @@ namespace lic {
 	/* Add the service to the library
 	*/
 	void Library::addService(const Service& service) {
-
+		//Add or overwrite existing slot:
+		_library[service._name] = service;
 	}
 }

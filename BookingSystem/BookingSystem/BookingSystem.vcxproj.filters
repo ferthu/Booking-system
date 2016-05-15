@@ -64,9 +64,6 @@
     <ClInclude Include="IAccount.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="ISystem.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
     <ClInclude Include="StringFunction.h">
       <Filter>Header\File</Filter>
     </ClInclude>
@@ -118,9 +115,6 @@
     <ClInclude Include="Account.h">
       <Filter>Header\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
     <ClInclude Include="TestPages.h">
       <Filter>Header\UI</Filter>
     </ClInclude>
@@ -142,17 +136,23 @@
     <ClInclude Include="DisplayReservationFunc.h">
       <Filter>Header\UI\Reservation</Filter>
     </ClInclude>
-    <ClInclude Include="SystemLibraries.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
     <ClInclude Include="Price.h">
       <Filter>Header\Logic\Service</Filter>
     </ClInclude>
-    <ClInclude Include="SystemServices.h">
-      <Filter>Header\Logic</Filter>
-    </ClInclude>
     <ClInclude Include="Library.h">
       <Filter>Header\Logic\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="ISystem.h">
+      <Filter>Header\Logic\System</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header\Logic\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemLibraries.h">
+      <Filter>Header\Logic\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemServices.h">
+      <Filter>Header\Logic\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +191,9 @@
     </Filter>
     <Filter Include="Source\UI\Reservation">
       <UniqueIdentifier>{10fa8f0a-2667-492c-90a2-2b288ca9bccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\System">
+      <UniqueIdentifier>{eacc7f55-cde9-443f-a088-bdfd03072d27}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
