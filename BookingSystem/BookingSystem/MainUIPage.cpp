@@ -13,7 +13,7 @@ void ui::MainUIPage::runPage()
 	std::cout << "4. Quit\n";
 	std::cout << "\nSelect an option: ";
 
-	int selection = getNumberInput(1, 4);
+	int selection = getNumberInput(1, 3);
 	lic::Filter f;
 	switch (selection)
 	{
