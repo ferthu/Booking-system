@@ -13,9 +13,8 @@ void ui::LibraryUIPage::runPage()
 {
 	std::cout << "Library\n\n";
 
-	lic::Filter f;
 	//Fetch list:
-	std::shared_ptr<std::vector<lic::Service>>& list = sys.getLibrary(lib::GAMELIBRARY).getServices(f);
+	std::shared_ptr<std::vector<lic::Service>>& list = sys.getLibrary(lib::GAMELIBRARY).getServices(_filter);
 	
 	std::cout << "1: Apply a filter to the list \n\n";
 
