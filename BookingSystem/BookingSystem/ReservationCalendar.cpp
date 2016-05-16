@@ -13,7 +13,7 @@
 namespace lic {
 
 	ReservationCalendar::ReservationCalendar(const Date d, unsigned int machineCount, unsigned int mentorCount)
-	:	_timeslots(DAYPERMONTH[d._month]), _reservations(), _date(d), _machineCount(machineCount), _mentorCount(mentorCount)
+	:	_timeslots(DAYPERMONTH[d._month]), _reservations(DAYPERMONTH[d._month]), _date(d), _machineCount(machineCount), _mentorCount(mentorCount)
 	{
 		for (int i = 0; i < DAYPERMONTH[d._month]; i++) {
 			_timeslots[i].resize(SLOTPERDAY);
