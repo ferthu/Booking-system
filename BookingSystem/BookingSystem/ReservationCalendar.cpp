@@ -262,7 +262,7 @@ namespace lic {
 		//Loop over all reservations and check if the account is linked with the reservation:
 		std::shared_ptr<std::vector<Reservation>> reservations(new std::vector<Reservation>());
 		for (unsigned int date = 0; date < _reservations.size(); date++) {
-			for (unsigned int i = 0; i < _reservations[i].size(); i++) {
+			for (unsigned int i = 0; i < _reservations.size(); i++) {
 				if (_reservations[date][i]._accountName == accountName)
 					reservations->push_back(_reservations[date][i]);
 			}
@@ -278,7 +278,7 @@ namespace lic {
 		if (calendarDateExist(dateIndex))
 			return reservations; //No reservation outside calendar list!
 
-								 //Loop over all time slots for the day:
+		//Loop over all time slots for the day:
 		for (unsigned int slot = 0; slot < _timeslots[dateIndex].size(); slot++) {
 			std::vector<int>& slotList = _timeslots[dateIndex][slot];
 			//Create a reservation list for each slot:
@@ -293,4 +293,5 @@ namespace lic {
 		}
 		return reservations;
 	}
+
 }
