@@ -185,6 +185,7 @@
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="ReservationCalendar.h" />
     <ClInclude Include="ReservationFinal.h" />
+    <ClInclude Include="ReservationList.h" />
     <ClInclude Include="ReservationTimeUIPage.h" />
     <ClInclude Include="ReservationUIPage.h" />
     <ClInclude Include="Review.h" />

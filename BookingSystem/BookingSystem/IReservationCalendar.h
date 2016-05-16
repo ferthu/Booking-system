@@ -3,11 +3,13 @@
 
 
 #include"Reservation.h"
+#include"ReservationList.h"
 #include"IAccount.h"
 #include<vector>
 #include<memory>
 
 namespace lic {
+
 
 	/*	Calendar keeping track of reservations for the system.
 		Can be quiried for available time slots and for reserving available slots.
@@ -35,5 +37,8 @@ namespace lic {
 		/* Fetches the reservations reserved by the specified account.
 		*/
 		virtual std::shared_ptr<std::vector<Reservation>> getReservations(const std::string& accountName) = 0;
+		/* Fetches the reservations for a specified date
+		*/
+		virtual std::shared_ptr<std::vector<ReservationList>> getReservations(const Date date) = 0;
 	};
 }

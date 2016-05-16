@@ -157,6 +157,9 @@
     <ClInclude Include="ServiceType.h">
       <Filter>Header\Logic\System</Filter>
     </ClInclude>
+    <ClInclude Include="ReservationList.h">
+      <Filter>Header\Logic\Reservation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

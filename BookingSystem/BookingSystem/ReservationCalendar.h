@@ -89,6 +89,9 @@ namespace lic {
 		/* Fetches the reservations reserved by the specified account.
 		*/
 		virtual std::shared_ptr<std::vector<Reservation>> getReservations(const std::string& accountName);
+		/* Fetches the reservations for a specified date
+		*/
+		virtual std::shared_ptr<std::vector<ReservationList>> getReservations(const Date date);
 	};
 
 }

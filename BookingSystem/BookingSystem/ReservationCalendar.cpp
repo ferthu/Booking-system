@@ -269,5 +269,29 @@ namespace lic {
 		}
 		return reservations;
 	}
+	/* Fetches the reservations for a specified date
+	*/
+	std::shared_ptr<std::vector<ReservationList>> ReservationCalendar::getReservations(const Date date) {
+		std::shared_ptr<std::vector<ReservationList>> reservations(new std::vector<ReservationList>());
+		//Convert the time variables to indices in the data arrays:
+		int dateIndex = dateToIndex(date);
+		if (calendarDateExist(dateIndex))
+			return reservations; //No reservation outside calendar list!
+
+		//Loop over all time slots for the day:
+		for (unsigned int slot = 0; slot < _timeslots[dateIndex].size(); slot++) {
+			std::vector<int>& slotList = _timeslots[dateIndex][slot];
+			//Create a reservation list for each slot:
+			if (slotList.size() > 0) {
+				reservations->push_back(ReservationList(slotIndexToTime(slot)));
+				for (unsigned int i = 0; i < slotList.size(); i++) {
+					//Add the reservation from the link to the last added list.
+					int res = slotList[i];
+					reservations->operator[](slotList.size() - 1)._list.push_back(_reservations[dateIndex][res]);
+				}
+			}
+		}
+		return reservations;
+	}
 
 }
