@@ -1,7 +1,6 @@
 #pragma once
 
 
-
 #include"Reservation.h"
 #include"ReservationList.h"
 #include"IAccount.h"
@@ -9,7 +8,6 @@
 #include<memory>
 
 namespace lic {
-
 
 	/*	Calendar keeping track of reservations for the system.
 		Can be quiried for available time slots and for reserving available slots.

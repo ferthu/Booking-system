@@ -14,7 +14,7 @@ namespace lic {
 		std::string _text;
 		/* Minimum rating of the service
 		*/
-		int _rating;
+		float _rating;
 		/* Maximum age limit of the games/services.
 		*/
 		int _ageRestriction;

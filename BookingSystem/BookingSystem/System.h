@@ -37,6 +37,8 @@ namespace lic {
 		*/
 		IAccount* getAccount();
 
+		virtual std::vector<Account> getAccounts();
+
 		System();
 		~System();
 
@@ -51,6 +53,8 @@ namespace lic {
 		/* Access a library from the system
 		*/
 		virtual ILibrary& getLibrary(const std::string& library);
+
+		
 	};
 
 }
