@@ -148,12 +148,14 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="DisplayReservationFunc.cpp" />
+    <ClCompile Include="FilterUIPage.cpp" />
     <ClCompile Include="GameDescriptionUIPage.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="LibraryUIPage.cpp" />
     <ClCompile Include="LoginUIPage.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainUIPage.cpp" />
+    <ClCompile Include="ReportUIPage.cpp" />
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="ReservationCalendar.cpp" />
     <ClCompile Include="ReservationFinal.cpp" />
@@ -169,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="FilterUIPage.h" />
     <ClInclude Include="Price.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="DisplayReservationFunc.h" />
@@ -182,6 +185,7 @@
     <ClInclude Include="LibraryUIPage.h" />
     <ClInclude Include="LoginUIPage.h" />
     <ClInclude Include="MainUIPage.h" />
+    <ClInclude Include="ReportUIPage.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="ReservationCalendar.h" />
     <ClInclude Include="ReservationFinal.h" />

@@ -37,6 +37,8 @@ namespace lic {
 		*/
 		IAccount* getAccount();
 
+		virtual std::vector<Account> getAccounts();
+
 		System();
 		~System();
 

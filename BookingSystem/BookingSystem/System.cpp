@@ -69,4 +69,8 @@ namespace lic {
 	{
 		return signedInAs;
 	}
+
+	std::vector<Account> System::getAccounts() {
+		return  accounts;
+	}
 }

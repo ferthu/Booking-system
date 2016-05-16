@@ -13,7 +13,7 @@
 namespace lic {
 
 	ReservationCalendar::ReservationCalendar(const Date d, unsigned int machineCount, unsigned int mentorCount)
-	:	_timeslots(DAYPERMONTH[d._month]), _reservations(d._month), _date(d), _machineCount(machineCount), _mentorCount(mentorCount)
+	:	_timeslots(DAYPERMONTH[d._month]), _reservations(), _date(d), _machineCount(machineCount), _mentorCount(mentorCount)
 	{
 		for (int i = 0; i < DAYPERMONTH[d._month]; i++) {
 			_timeslots[i].resize(SLOTPERDAY);
@@ -262,7 +262,7 @@ namespace lic {
 		//Loop over all reservations and check if the account is linked with the reservation:
 		std::shared_ptr<std::vector<Reservation>> reservations(new std::vector<Reservation>());
 		for (unsigned int date = 0; date < _reservations.size(); date++) {
-			for (unsigned int i = 0; i < _reservations.size(); i++) {
+			for (unsigned int i = 0; i < _reservations[date].size(); i++) {
 				if (_reservations[date][i]._accountName == accountName)
 					reservations->push_back(_reservations[date][i]);
 			}
