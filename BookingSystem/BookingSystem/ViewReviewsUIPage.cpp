@@ -26,10 +26,8 @@ namespace ui {
 			displayDate(_service._reviews[i]._date);
 			std::cout << std::endl << std::endl;
 		}
-
 		std::cout << "\n\n0. To go Back:";
 		int selection = getNumberInput(0, 0);
-		lic::Filter f;
 		if (selection == 0)
 		{
 			state.setNextPage(new GameDescriptionUIPage(state, sys, _service));
