@@ -38,12 +38,6 @@
     <ClCompile Include="Reservation.cpp">
       <Filter>Source\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="LibraryUIPage.cpp">
-      <Filter>Source\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="GameDescriptionUIPage.cpp">
-      <Filter>Source\UI</Filter>
-    </ClCompile>
     <ClCompile Include="ReservationTimeUIPage.cpp">
       <Filter>Source\UI\Reservation</Filter>
     </ClCompile>
@@ -62,10 +56,18 @@
     <ClCompile Include="ReportUIPage.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
-    <ClCompile Include="FilterUIPage.cpp">
-      <Filter>Source\UI</Filter>
+    <ClCompile Include="LibraryUIPage.cpp">
+      <Filter>Source\UI\GameLibrary</Filter>
     </ClCompile>
-    <ClCompile Include="ViewReviewsUIPage.cpp" />
+    <ClCompile Include="FilterUIPage.cpp">
+      <Filter>Source\UI\GameLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDescriptionUIPage.cpp">
+      <Filter>Source\UI\GameLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewReviewsUIPage.cpp">
+      <Filter>Source\UI\GameLibrary</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
@@ -125,12 +127,6 @@
     <ClInclude Include="TestPages.h">
       <Filter>Header\UI</Filter>
     </ClInclude>
-    <ClInclude Include="LibraryUIPage.h">
-      <Filter>Header\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="GameDescriptionUIPage.h">
-      <Filter>Header\UI</Filter>
-    </ClInclude>
     <ClInclude Include="ReservationUIPage.h">
       <Filter>Header\UI\Reservation</Filter>
     </ClInclude>
@@ -167,13 +163,21 @@
     <ClInclude Include="ReservationList.h">
       <Filter>Header\Logic\Reservation</Filter>
     </ClInclude>
-    <ClInclude Include="FilterUIPage.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="ReportUIPage.h">
-      <Filter>Header</Filter>
+      <Filter>Header\UI</Filter>
     </ClInclude>
-    <ClInclude Include="ViewReviewsUIPage.h" />
+    <ClInclude Include="FilterUIPage.h">
+      <Filter>Header\UI\GameLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDescriptionUIPage.h">
+      <Filter>Header\UI\GameLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="LibraryUIPage.h">
+      <Filter>Header\UI\GameLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewReviewsUIPage.h">
+      <Filter>Header\UI\GameLibrary</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
@@ -214,6 +218,12 @@
     </Filter>
     <Filter Include="Header\Logic\System">
       <UniqueIdentifier>{eacc7f55-cde9-443f-a088-bdfd03072d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\UI\GameLibrary">
+      <UniqueIdentifier>{8916b129-8190-4e10-a40e-44737ffb703d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI\GameLibrary">
+      <UniqueIdentifier>{9d46021c-a24e-413c-9df8-5c8774117d30}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
