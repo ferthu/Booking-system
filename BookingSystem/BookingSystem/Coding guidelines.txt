@@ -1,0 +1,2 @@
+1. Name each document that is written at the top that is a object. 
+2. Make a interface of the class the main object's
