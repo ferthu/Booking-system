@@ -65,6 +65,7 @@
     <ClCompile Include="FilterUIPage.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ViewReviewsUIPage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
@@ -172,6 +173,7 @@
     <ClInclude Include="ReportUIPage.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="ViewReviewsUIPage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

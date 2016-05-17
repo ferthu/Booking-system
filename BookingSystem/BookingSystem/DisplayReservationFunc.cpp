@@ -10,8 +10,15 @@ namespace ui {
 
 	/* Display the date
 	*/
+	void displayDate(const lic::Date& d) {
+		std::cout << d._year << '-' << d._month << '-' << d._day;
+	}
+	/* Display the date
+	*/
 	void displayDate(const lic::Reservation& res) {
-		std::cout << "Date: " << res._date._year << '-' << res._date._month << '-' << res._date._day << std::endl;
+		std::cout << "Date: ";
+		displayDate(res._date);
+		std::cout << std::endl;
 	}
 	/* Display the time var (does not call newline)
 	*/

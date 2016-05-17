@@ -3,6 +3,7 @@
 #include "ReservationUIPage.h"
 #include "Reservation.h"
 #include "Service.h"
+#include"ViewReviewsUIPage.h"
 
 ui::GameDescriptionUIPage::GameDescriptionUIPage(const UIState& state, lic::ISystem& sys, const lic::Service service)
 	: UIPage(state, sys)
@@ -25,13 +26,18 @@ void ui::GameDescriptionUIPage::runPage()
 	}
 
 	std::cout << "\n\n0. Go Back\n";
-	std::cout << "1. Book Game\n";
+	std::cout << "1. View reviews\n";
+	std::cout << "2. Book Game\n";
 	std::cout << "\nSelect an option: ";
-	int selection = getNumberInput(0, 1);
+	int selection = getNumberInput(0, 2);
 	lic::Filter f;
 	if (selection == 0)
 	{
 		state.setNextPage(new ui::LibraryUIPage(state, sys, f));
+	}
+	else if(selection == 1)
+	{
+		state.setNextPage(new ui::ViewReviewsUIPage(state, sys, _service));
 	}
 	else
 	{

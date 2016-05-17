@@ -168,6 +168,7 @@
     <ClCompile Include="TextWriter.cpp" />
     <ClCompile Include="UIPage.cpp" />
     <ClCompile Include="UIState.cpp" />
+    <ClCompile Include="ViewReviewsUIPage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
@@ -205,6 +206,7 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="UIPage.h" />
     <ClInclude Include="UIState.h" />
+    <ClInclude Include="ViewReviewsUIPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

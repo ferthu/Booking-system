@@ -45,7 +45,7 @@ void populateGames(lic::System& sys) {
 	game._name = "John's Adventure 7: Redemption";
 	game._description = "In the epic conclusion to the iconic John's Adventure franchise, John regains or gains possession of something in exchange for payment, or clearing a debt.";
 	game._price = 350;
-	game._rating = 0.2f;
+	game._rating = 0;
 	game._requiredAge = 3;
 	game._tags.push_back("FPS");
 	game.addReview(lic::Review(0, "total piece of shit. wtf ?? ?", "xX_coolguy_420_Xx", lic::Date(2016, 5, 15)));
@@ -55,7 +55,6 @@ void populateGames(lic::System& sys) {
 	game._name = "Hotline Miami";
 	game._description = "Top down shooter with stealth, extreme violence and surreal storytelling, along with a soundtrack and visuals influenced by 1980s culture.";
 	game._price = 570;
-	game._rating = 0.8f;
 	game._requiredAge = 18;
 	game._tags.push_back("top down");
 	game._tags.push_back("shooter");
@@ -68,19 +67,19 @@ void populateGames(lic::System& sys) {
 	game._name = "Oniken";
 	game._description = "Retro side-scrolling action platformer.";
 	game._price = 230;
-	game._rating = 0.7f;
+	game._rating = 2.5;
 	game._requiredAge = 7;
 	game._tags.push_back("platform");
 	game._tags.push_back("action");
 	game._tags.push_back("pixel");
 	game._tags.push_back("NES");
+	game.addReview(lic::Review(5, "Best game ever!! #Huge#SoMuchWin#Greatest", "name", lic::Date(2016, 5, 11)));
 	gameLib.addService(game);
 	game._tags.clear();
 
 	game._name = "Stronghold";
 	game._description = "Medieval real time strategy game with resource management.";
 	game._price = 330;
-	game._rating = 0.65f;
 	game._requiredAge = 7;
 	game._tags.push_back("RTS");
 	game._tags.push_back("strategy");
@@ -92,7 +91,6 @@ void populateGames(lic::System& sys) {
 	game._name = "Alice: Madness Returns";
 	game._description = "Surrealistic action platformer in a tird person perpective.";
 	game._price = 890;
-	game._rating = 0.5f;
 	game._requiredAge = 17;
 	game._tags.push_back("platform");
 	game._tags.push_back("action");
@@ -106,7 +104,6 @@ void populateGames(lic::System& sys) {
 	game._name = "Super Smash Bros: Melee";
 	game._description = "Action platform brawler with classic nintendo characters.";
 	game._price = 890;
-	game._rating = 0.9f;
 	game._requiredAge = 7;
 	game._tags.push_back("multiplayer");
 	game._tags.push_back("mario");
@@ -119,7 +116,6 @@ void populateGames(lic::System& sys) {
 	game._name = "Witcher 3";
 	game._description = "Large open world RPG with in a fantasy world based on the witcher book series.";
 	game._price = 1190;
-	game._rating = 0.8f;
 	game._requiredAge = 7;
 	game._tags.push_back("story");
 	game._tags.push_back("RPG");
@@ -131,7 +127,6 @@ void populateGames(lic::System& sys) {
 	game._name = "Heroes of might and magic 3";
 	game._description = "A turn based strategy game with rpg elements and a randomly generated world.";
 	game._price = 590;
-	game._rating = 0.99f;
 	game._requiredAge = 7;
 	game._tags.push_back("strategy");
 	game._tags.push_back("turn based");
@@ -144,7 +139,6 @@ void populateGames(lic::System& sys) {
 	game._name = "Brutal DOOM";
 	game._description = "A mod for the classic FPS game DOOM. Improved controls and visuals!";
 	game._price = 390;
-	game._rating = 0.65f;
 	game._requiredAge = 7;
 	game._tags.push_back("FPS");
 	game._tags.push_back("bloody");

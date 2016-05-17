@@ -18,6 +18,9 @@ namespace ui {
 	/* Function displaying a reservation
 	*/
 	void  displayReservation(const lic::Reservation& res, lic::ISystem& sys);
+	/* Display the date
+	*/
+	void displayDate(const lic::Date& d);
 	/* Display the date (does not call newline)
 	*/
 	void displayDate(const lic::Reservation& res);
