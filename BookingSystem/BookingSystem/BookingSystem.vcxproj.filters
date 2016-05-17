@@ -65,9 +65,7 @@
     <ClCompile Include="FilterUIPage.cpp">
       <Filter>Source\UI</Filter>
     </ClCompile>
-    <ClCompile Include="ViewReviewsUIPage.cpp">
-      <Filter>Source\UI</Filter>
-    </ClCompile>
+    <ClCompile Include="ViewReviewsUIPage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IAccount.h">
@@ -169,15 +167,13 @@
     <ClInclude Include="ReservationList.h">
       <Filter>Header\Logic\Reservation</Filter>
     </ClInclude>
-    <ClInclude Include="ViewReviewsUIPage.h">
-      <Filter>Header\UI</Filter>
-    </ClInclude>
     <ClInclude Include="FilterUIPage.h">
-      <Filter>Header\UI</Filter>
+      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="ReportUIPage.h">
-      <Filter>Header\UI</Filter>
+      <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="ViewReviewsUIPage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
