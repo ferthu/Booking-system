@@ -105,8 +105,8 @@ namespace lic {
 			int slotIndex = timeToSlotIndex(available[i]);
 			if (!slotAvailable(serviceName, dateIndex, slotIndex, resCount)) {
 				//Remove the available time and decrement the loop to accomodate the removed value.
-				available.erase(available.begin() + slotIndex);
-				slotIndex--;
+				available.erase(available.begin() + i);
+				i--;
 			}
 		}
 
